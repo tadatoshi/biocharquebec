@@ -1,0 +1,18 @@
+<p>
+  <b>Title:</b>
+  <%= @overview.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @overview.description %>
+</p>
+
+<p>
+  <b>Locale:</b>
+  <%= @overview.locale %>
+</p>
+
+
+<%= link_to 'Edit', edit_overview_path(@overview) %> |
+<%= link_to 'Back', overviews_path %>
