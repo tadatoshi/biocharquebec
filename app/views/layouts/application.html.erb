@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Biochar Quebec - Biochar Québec: <%= controller.action_name %></title>
+  <%= render :partial => 'layouts/head' %>
+</head>
+
+<body id="home-body">
+  <div id="page"> <!-- start of the page wrapper -->
+
+    <%= render :partial => 'layouts/header' %>
+
+    <div id="middle"> <!-- container for the sidebar and main region -->
+
+      <div id="main"> <!-- start of main content -->
+  
+        <p class="notice"><%= notice %></p>
+
+        <div id="main-section">
+          <%= yield %>
+        </div>
+        
+      </div> <!-- end of main content -->
+
+      <%= render :partial => 'layouts/sidebar' %>      
+
+    </div> <!-- end of middle container -->
+
+    <%= render :partial => 'layouts/footer' %>   
+
+  </div> <!-- end of the page wrapper -->
+</body>
+
+</html>

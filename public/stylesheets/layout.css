@@ -1,0 +1,91 @@
+body, p, h1, h2, h3, h4, h5, h6, ul, li, form {
+  margin: 0;
+  padding: 0;
+  line-height: 18px;
+}
+p, h2, h3, h4, h5, h6 {
+  margin-bottom: 18px;
+}
+p, h2, h3{
+  line-height: 18px;
+}
+
+#page {
+  display: block;
+  margin: 0px auto;
+}
+
+#header {
+  height: 90px;
+  width: 100%;
+}
+  #header #header-content {
+    padding-top: 18px;
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+  #header #tab {
+    height: 36px;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+    #header #tab ul {
+      height: 36px;
+      list-style-type: none;
+    }
+      #header #tab ul li {
+        width: 70px;
+        float: left;
+        text-align: center;
+      }
+
+#middle {
+  clear: both;
+  min-height: 480px;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+  #middle #main {
+    min-height: 480px;
+    width: 694px;
+    float: left;
+  }
+  #middle #sidebar {
+    min-height: 480px;
+    width: 306px;
+    float: left;
+  }
+
+#search {
+  margin-left: 18px;
+  margin-right: 18px;
+  margin-top: 18px;
+}
+
+#signup-login {
+  margin-top: 36px;
+  float: left;
+  width: 288px;
+  text-align: center;
+}
+  #signup-login a {
+    width: 100%;
+    display: block;
+    margin-bottom: 18px;
+    float: left;
+  }
+
+#main-section {
+  clear: both;
+  margin-left: 18px;
+  margin-right: 18px;
+  margin-top: 18px;
+}
+
+#footer {
+  clear: both;
+  height: 36px;
+  width: 100%;
+}
