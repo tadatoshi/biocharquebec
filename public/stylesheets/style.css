@@ -41,6 +41,9 @@ a:hover {
   color: #002173;
 }
 
+#header #header-links {
+  font-size: 14px;
+}
 #header #tab ul li {
   background-color: #00843b;
   border-right: 1px solid #5b0101;

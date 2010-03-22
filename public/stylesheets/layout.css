@@ -24,6 +24,14 @@ p, h2, h3{
     padding-right: 18px;
     padding-left: 18px;
   }
+  #header #header-links {
+    float: right;
+    padding-top: 18px;
+    padding-right: 18px;
+  }
+  #header #header-links ul {
+    list-style-type: none;
+  }
   #header #tab {
     height: 36px;
     width: 1000px;

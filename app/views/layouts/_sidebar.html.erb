@@ -1,11 +1,11 @@
 <div id="sidebar"> <!-- start of the sidebar -->
 
   <div id="search">
-    <h2 id="search-header">Search<span></span></h2>
+    <h2 id="search-header"><%= t "common.search" %><span></span></h2>
     <form id="search-form" method="POST" action="/search_contents/">
       <div>
         <input type="text" id="search-keywords" name="keywords"></input>
-        <input type="image" alt="Search" src="images/search.png"></input>
+        <input type="image" alt=<%= t "common.search" %> src="images/search.png"></input>
       </div>
     </form>
   </div>
@@ -13,11 +13,11 @@
   <div id="signup-login">
     <a href="/signup/">
       <!-- <img src="images/btn_signup.png" alt="Sign up"> -->
-      Sign up
+      <%= t "common.signup" %>
     </a>
     <a href="/login/">
       <!-- <img src="images/btn_login.png" alt="Log in"> -->
-      Log in
+      <%= t "common.login" %>
     </a>
   </div><!-- end signup-login -->
   

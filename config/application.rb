@@ -27,6 +27,10 @@ module Biocharquebec
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
+    # Added by tadatoshi because the one above causes an error "`[]': can't convert Pathname into String (TypeError)":
+    # config.i18n.load_path += Dir[File.join(Rails.root, 'my', 'locales', '*.{rb,yml}')]
+    # Added by tadatoshi in order to organize locale files based on http://guides.rails.info/i18n.html:
+    config.i18n.load_path += Dir[File.join(Rails.root, 'config', 'locales', '**', '*.{rb,yml}')] 
     # config.i18n.default_locale = :de
 
     # Configure generators values. Many other options are available, be sure to check the documentation.

@@ -1,9 +1,9 @@
 <div id="footer"> <!-- start of the footer -->
 
-  <p id="copyright">Copyright &copy; 2010 Biochar Quebec, all rights reserved.</p>
+  <p id="copyright"><%= t("footer.copyright_info", :copyright => t("footer.copyright"), :biochar_quebec => t("common.biochar_quebec"), :all_rights_reserved => t("footer.all_rights_reserved")) %></p>
   <p id="privacy-and-terms">
-    <a href="terms.html">Terms of Service</a> |
-    <a href="privacy.html">Privacy Policy</a>
-  </p>  
-  
+    <a href="terms.html"><%= t "footer.terms_of_service" %></a> |
+    <a href="privacy.html"><%= t "footer.privacy_policy" %></a>
+  </p>
+
 </div> <!-- end of the footer -->

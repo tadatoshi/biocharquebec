@@ -1,15 +1,21 @@
 <div id="header"> <!-- start of header -->
   
+  <div id="header-links">
+    <ul>
+      <li><%= link_to_other_locale %></li>
+    </ul>
+  </div>
+
   <div id="header-content">
-    <h1 class="title">Biochar Quebec</h1>
+    <h1 class="title"><%= t "common.biochar_quebec" %></h1>
     <p>
-      Biochar Quebec is a group of people who are interested in biochar. 
+      <%= t "header.title_message" %>
     </p>
   </div>
 
   <div id="tab">
     <ul>
-      <li id="home-tab"><a href="index.html">Home</a></li>
+      <li id="home-tab"><a href="index.html"><%= t "common.home" %></a></li>
       <li id="second-tab"><a href="second.html">Second</a></li>
       <li id="topics-tab last-tab"><a href="topics.html">Topics</a></li>
     </ul>
