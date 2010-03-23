@@ -1,4 +1,6 @@
 Biocharquebec::Application.routes.draw do |map|
+  resources :users
+
   resources :overviews
 
 
