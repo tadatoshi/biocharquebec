@@ -1,8 +1,12 @@
 Biocharquebec::Application.routes.draw do |map|
+  
+  map.login 'login', :controller => 'user_sessions', :action => 'new'
+  map.logout 'logout', :controller => 'user_sessions', :action => 'destroy'
+  map.signup 'signup', :controller => 'users', :action => 'new'  
+  
+  resources :user_sessions
   resources :users
-
   resources :overviews
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -54,6 +58,7 @@ Biocharquebec::Application.routes.draw do |map|
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => "welcome#index"
+  root :to => "overviews#index"
 
   # See how all your routes lay out with "rake routes"
 

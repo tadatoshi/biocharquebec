@@ -11,14 +11,13 @@
   </div>
 
   <div id="signup-login">
-    <a href="/signup/">
-      <!-- <img src="images/btn_signup.png" alt="Sign up"> -->
-      <%= t "common.signup" %>
-    </a>
-    <a href="/login/">
-      <!-- <img src="images/btn_login.png" alt="Log in"> -->
-      <%= t "common.login" %>
-    </a>
+    <% if current_user %>
+      <%= link_to "Edit Profile", edit_user_path(:current) %>
+      <%= link_to t("common.logout"), logout_path %>
+    <% else %>
+      <%= link_to t("common.signup"), signup_path %>
+      <%= link_to t("common.login"), login_path %>
+    <% end %>
   </div><!-- end signup-login -->
   
 </div> <!-- end of the sidebar -->
