@@ -1,6 +1,6 @@
 <% @url_for_localization = signup_url(:locale => pick_other_locale_and_i18n_language_key[:locale]) %>
 
-<h1>New user</h1>
+<h1><%= t("common.signup") %></h1>
 
 <%= render 'form' %>
 
