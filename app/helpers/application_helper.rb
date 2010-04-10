@@ -13,8 +13,13 @@ module ApplicationHelper
         
     link_to(t("common.#{pick_other_locale_and_i18n_language_key[:i18n_language_key]}", 
               :locale => pick_other_locale_and_i18n_language_key[:locale]), 
-            @url_for_localization)
+            (@url_for_localization || controller_path_with_other_locale))
 
   end
+  
+  private
+    def controller_path_with_other_locale
+      "#{controller_path}?locale=#{pick_other_locale_and_i18n_language_key[:locale]}"
+    end
   
 end

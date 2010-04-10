@@ -1,4 +1,4 @@
-class BlogEntry
+class BlogPost
   include MongoMapper::Document
   
   key :title, String, :required => true

@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe "blog_entries/show.html.erb" do
+describe "blog_posts/show.html.erb" do
   before(:each) do
     # Doesn't work with MongoMapper:
-    # assign(:blog_entry, @blog_entry = stub_model(BlogEntry,
+    # assign(:blog_post, @blog_post = stub_model(BlogPost,
     #   :title => "MyString",
     #   :content => "MyText"
     # ))

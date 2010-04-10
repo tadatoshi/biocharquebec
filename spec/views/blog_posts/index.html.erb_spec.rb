@@ -1,21 +1,21 @@
 require 'spec_helper'
 
-describe "blog_entries/index.html.erb" do
+describe "blog_posts/index.html.erb" do
   before(:each) do
     # Doesn't work with MongoMapper:
-    # assign(:blog_entries, [
-    #   stub_model(BlogEntry,
+    # assign(:blog_posts, [
+    #   stub_model(BlogPost,
     #     :title => "MyString",
     #     :content => "MyText"
     #   ),
-    #   stub_model(BlogEntry,
+    #   stub_model(BlogPost,
     #     :title => "MyString",
     #     :content => "MyText"
     #   )
     # ])
   end
 
-  it "renders a list of blog_entries" do
+  it "renders a list of blog_posts" do
     # render
     # response.should have_selector("tr>td", :content => "MyString".to_s, :count => 2)
     # response.should have_selector("tr>td", :content => "MyText".to_s, :count => 2)

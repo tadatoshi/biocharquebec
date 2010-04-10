@@ -1,5 +1,5 @@
 Biocharquebec::Application.routes.draw do |map|
-  resources :blog_entries
+  resources :blog_posts
 
   
   map.login 'login', :controller => 'user_sessions', :action => 'new'
