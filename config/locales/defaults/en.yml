@@ -24,4 +24,12 @@ en:
     copyright: "Copyright"
     all_rights_reserved: "all rights reserved"
     terms_of_service: "Terms of Service"
-    privacy_policy: "Privacy Policy"
+    privacy_policy: "Privacy Policy"    
+    
+  #########################################################################################################################
+  # TODO: Move the following sections to different file after figuring out loading the file. 
+  #       The way described in http://guides.rails.info/i18n.html#optional-custom-i18n-configuration-setup doesn't work. 
+  #########################################################################################################################
+  blog:
+    blog: "Blog"
+    

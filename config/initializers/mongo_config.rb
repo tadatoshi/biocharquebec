@@ -1,0 +1,1 @@
+MongoMapper.database = "biocharquebec-#{Rails.env}"

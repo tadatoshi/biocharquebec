@@ -1,4 +1,6 @@
 Biocharquebec::Application.routes.draw do |map|
+  resources :blog_entries
+
   
   map.login 'login', :controller => 'user_sessions', :action => 'new'
   map.logout 'logout', :controller => 'user_sessions', :action => 'destroy'
