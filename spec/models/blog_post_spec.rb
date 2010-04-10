@@ -33,10 +33,10 @@ describe BlogPost do
       
       it "should have title" do
         
-        lambda do
+        expect do
           blog_post = BlogPost.create(:title => nil)
           blog_post.errors.on(:title).should_not be_nil
-        end.should_not change(BlogPost, :count)
+        end.to change { BlogPost.count }.by(0)
         
       end
       
