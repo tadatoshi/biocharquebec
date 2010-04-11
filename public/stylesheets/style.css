@@ -53,13 +53,13 @@ a:hover {
     color: #faaf0f;
   }
 
-body#home-body #page #header #tab ul li#home-tab, 
-body#second-body #page #header #tab ul li#second-tab, 
+body#overviews-body #page #header #tab ul li#overviews-tab, 
+body#blog-posts-body #page #header #tab ul li#blog-posts-tab, 
 body#topics-body #page #header #tab ul li#topics-tab {
   background-color: #fff8e4;
 }
-  body#home-body #page #header #tab ul li#home-tab a, 
-  body#second-body #page #header #tab ul li#second-tab a, 
+  body#overviews-body #page #header #tab ul li#overviews-tab a, 
+  body#blog-posts-body #page #header #tab ul li#blog-posts-tab a, 
   body#topics-body #page #header #tab ul li#topics-tab a {
     color: #4d3900;
   }
