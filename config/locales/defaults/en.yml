@@ -15,7 +15,9 @@ en:
     logout: "Log out"
     english: "English"
     french: "French"
-    
+    title: "Title"
+    content: "Content"
+
   header:
     title_message: "Biochar Quebec is a group of people who are interested in biochar."
     
@@ -32,4 +34,6 @@ en:
   #########################################################################################################################
   blog:
     blog: "Blog"
+    blog_post: "Blog post"
+    add_a_new_blog_post: "Add a new blog post"
     

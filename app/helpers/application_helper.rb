@@ -13,13 +13,20 @@ module ApplicationHelper
         
     link_to(t("common.#{pick_other_locale_and_i18n_language_key[:i18n_language_key]}", 
               :locale => pick_other_locale_and_i18n_language_key[:locale]), 
-            (@url_for_localization || controller_path_with_other_locale))
+            (@url_for_localization || url_with_other_locale(request.url)))
 
   end
   
   private
-    def controller_path_with_other_locale
-      "#{controller_path}?locale=#{pick_other_locale_and_i18n_language_key[:locale]}"
+    def url_with_other_locale(url)
+      other_locale_parameter = "locale=#{pick_other_locale_and_i18n_language_key[:locale]}"
+      if url.match(/locale=\w{2}/)
+        url.sub(/locale=\w{2}/, other_locale_parameter)
+      elsif url.match(/\?/)
+        "#{url}&#{other_locale_parameter}"
+      else
+        "#{url}?#{other_locale_parameter}"
+      end
     end
   
 end

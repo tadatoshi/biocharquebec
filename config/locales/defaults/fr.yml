@@ -147,7 +147,9 @@ fr:
     login: "Se connecter"
     logout: "Se déconnecter" 
     english: "Anglais"
-    french: "Français"       
+    french: "Français"
+    title: "Titre"
+    content: "Contenu"         
 
   header:
     title_message: "Biochar Québec est un group de personnes qui sont intéressé à biochar."    
@@ -165,4 +167,5 @@ fr:
   #########################################################################################################################
   blog:
     blog: "Blog"
-        
+    blog_post: "Poste de blogue"
+    add_a_new_blog_post: "Ajouter une nouveau poste de blogue"    
