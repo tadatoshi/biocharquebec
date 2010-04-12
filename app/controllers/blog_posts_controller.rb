@@ -44,6 +44,7 @@ class BlogPostsController < ApplicationController
 
     respond_to do |format|
       if @blog_post.save
+        Blogs::MultipleBlogMailerCaller.send_new_blog_post_mails_to_all_users(@blog_post)
         format.html { redirect_to(@blog_post, :notice => 'Blog entry was successfully created.') }
         format.xml  { render :xml => @blog_post, :status => :created, :location => @blog_post }
       else

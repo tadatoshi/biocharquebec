@@ -36,4 +36,6 @@ en:
     blog: "Blog"
     blog_post: "Blog post"
     add_a_new_blog_post: "Add a new blog post"
+    mail:
+      new_blog_post: "New blog post"
     
