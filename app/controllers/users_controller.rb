@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  
+  ssl_required :index, :show, :new, :edit, :create, :update, :destory if Rails.env.production?
+  
   # GET /users
   # GET /users.xml
   def index
