@@ -28,14 +28,15 @@ group :test do
 end
 group :cucumber do
   gem "cucumber"
-  gem 'capybara'
-  gem 'database_cleaner'
-  gem 'cucumber-rails'
+  gem "capybara"
+  gem "database_cleaner"
+  gem "cucumber-rails"
   gem "test-unit"
 end
 # group :test do
 #   gem "webrat"
 # end
 group :production do
-  gem 'capistrano'
+  gem "capistrano"
+  gem "mysql"
 end
