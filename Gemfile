@@ -19,7 +19,7 @@ gem "sqlite3-ruby", :require => "sqlite3"
 gem "authlogic", :git => "git://github.com/odorcicd/authlogic.git", :branch => "rails3"
 gem "mongo_mapper"
 gem "mongo_ext"
-gem "bson_ext"
+gem "bson_ext" # For mongo_mapper
 
 ## Bundle gems used only in certain environments:
 group :test do
