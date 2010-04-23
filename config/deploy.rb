@@ -48,7 +48,7 @@ namespace :thin do
   %w(start stop restart).each do |action| 
   desc "#{action} the app's Thin Cluster"  
     task action.to_sym, :roles => :app do  
-      run "sudo /etc/init.d #{action}" 
+      run "sudo /etc/init.d/thin #{action}" 
     end
   end
 end
