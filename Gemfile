@@ -20,6 +20,8 @@ gem "authlogic", :git => "git://github.com/odorcicd/authlogic.git", :branch => "
 gem "mongo_mapper"
 gem "mongo_ext"
 gem "bson_ext" # For mongo_mapper
+gem "devise", "1.1.rc1"
+gem "capistrano"
 
 ## Bundle gems used only in certain environments:
 group :test do
@@ -37,6 +39,6 @@ end
 #   gem "webrat"
 # end
 group :production do
-  gem "capistrano"
   gem "mysql"
+  gem "thin"
 end
