@@ -1,23 +1,13 @@
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<h2 class="title"><%= t("blog.blog") %></h2>
 
-<% @blog_posts.each do |blog_post| %>
-  <tr>
-    <td><%= blog_post.title %></td>
-    <td><%= blog_post.content %></td>
-    <td><%= link_to 'Show', blog_post, :only_path => false %></td>
-    <td><%= link_to 'Edit', edit_blog_post_url(blog_post) %></td>
-    <td><%= link_to 'Destroy', blog_post, :confirm => 'Are you sure?', :method => :delete, :only_path => false %></td>
-  </tr>
-<% end %>
-</table>
+<p id="add"><%= link_to t("blog.add_a_new_blog_post"), new_blog_post_path %></p>
 
-<br />
-
-<%= link_to t("blog.add_a_new_blog_post"), new_blog_post_path %>
+<div id="content-list">
+  
+  <% @blog_posts.each do |blog_post| %>
+  <div>
+    <h3><a href="#"><%= blog_post.title %></a></h3>
+    <p><%= blog_post.content %></p>
+  </div>
+  <% end %>
+</div>
