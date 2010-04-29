@@ -72,13 +72,13 @@ p, h2, h3{
   margin-top: 18px;
 }
 
-#signup-login {
+#authentication {
   margin-top: 36px;
   float: left;
   width: 288px;
   text-align: center;
 }
-  #signup-login a {
+  #authentication a {
     width: 100%;
     display: block;
     margin-bottom: 18px;

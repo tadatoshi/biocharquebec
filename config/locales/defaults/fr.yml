@@ -143,13 +143,14 @@ fr:
     biochar_quebec: "Biochar Québec"
     home: "Accueil"
     search: "Recherche"
-    signup: "S'inscrire"
-    login: "Se connecter"
-    logout: "Se déconnecter" 
+    sign_up: "S'inscrire"
+    sign_in: "Se connecter"
+    sign_out: "Se déconnecter" 
     english: "Anglais"
     french: "Français"
     title: "Titre"
-    content: "Contenu"         
+    content: "Contenu"     
+    welcome: "Bienvenu"        
 
   header:
     title_message: "Biochar Québec est un group de personnes qui sont intéressé à biochar."    
@@ -165,6 +166,9 @@ fr:
   # TODO: Move the following sections to different file after figuring out loading the file. 
   #       The way described in http://guides.rails.info/i18n.html#optional-custom-i18n-configuration-setup doesn't work. 
   #########################################################################################################################
+  user:
+    edit_profile: "Modifiez votre profil"  
+  
   blog:
     blog: "Blog"
     blog_post: "Poste de blogue"

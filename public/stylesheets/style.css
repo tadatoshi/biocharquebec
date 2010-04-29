@@ -72,15 +72,15 @@ body#topics-body #page #header #tab ul li#topics-tab {
   padding: 0;
 }
 
-#signup-login {
+#authentication {
   font-size: 18px;
 }
-  #signup-login a {
+  #authentication a {
     color: #5b0101;
   }
-  #signup-login a:visited {
+  #authentication a:visited {
     color: #807940; 
   }
-  #signup-login a:hover { 
+  #authentication a:hover { 
     color: #faaf0f;
   }

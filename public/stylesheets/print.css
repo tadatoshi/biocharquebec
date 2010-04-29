@@ -1,4 +1,4 @@
-#sidebar, #signup-login, #privacy-and-terms, .noprint {
+#sidebar, #authentication, #privacy-and-terms, .noprint {
   display: none;
 }
 

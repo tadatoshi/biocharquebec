@@ -1,6 +1,6 @@
 class OverviewsController < ApplicationController
-  # GET /overviews
-  # GET /overviews.xml
+  before_filter :authenticate_user!, :except => [:show, :index]  
+  
   def index
     @overviews = Overview.all
 

@@ -10,14 +10,19 @@
     </form>
   </div>
 
-  <div id="signup-login">
-    <% if current_user %>
-      <%= link_to "Edit Profile", edit_user_path(:current) %>
-      <%= link_to t("common.logout"), logout_path %>
-    <% else %>
-      <%= link_to t("common.signup"), signup_path %>
-      <%= link_to t("common.login"), login_path %>
+  <div id="authentication">
+    <% # Because the following section contains Devise codes which depends on Warden, which is Rails Engine, testing fails %>
+    <% # Hence it is excluded in test environment: %>
+    <% unless Rails.env.test? %>
+      <% if user_signed_in? %>
+        <p><%= current_user.email %></p>
+        <%= link_to t("user.edit_profile"), edit_user_registration_url %>
+        <%= link_to t("common.sign_out"), destroy_user_session_url %>
+      <% else %>
+        <%= link_to t("common.sign_up"), new_user_registration_url %>
+        <%= link_to t("common.sign_in"), new_user_session_url %>
+      <% end %>
     <% end %>
-  </div><!-- end signup-login -->
+  </div><!-- end authentication -->
   
 </div> <!-- end of the sidebar -->

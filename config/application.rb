@@ -43,5 +43,19 @@ module Biocharquebec
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters << :password
+
+    # Your secret key for verifying the integrity of signed cookies.
+    # If you change this key, all old signed cookies will become invalid!
+    # Make sure the secret is at least 30 characters and all random, 
+    # no regular words or you'll be exposed to dictionary attacks.
+    config.secret_token = 'e62ec37b2d61e9d4aeca3e663a2646d4b126ea59e2915f9f95805f4b92290908a199c9a3065cdb1bc6b788473d5530be8e9a6a7cbd46dcd78716c3e81b040a63' 
+
+    # Your secret key for verifying cookie session data integrity.
+    # If you change this key, all old sessions will become invalid!
+    # Make sure the secret is at least 30 characters and all random, 
+    # no regular words or you'll be exposed to dictionary attacks.
+    config.session_store :cookie_store, 
+                         :key => '_biocharquebec_session',
+                         :secret => 'a1b7aefd34983b91c1bc04a5d8e13dd3d6a0105b545f4c3c82328dad71a38ef124c02596da204de6c8c5961f3523cc85e542b3655b199957c455b38bfd23457a'
   end
 end

@@ -1,12 +1,8 @@
 Biocharquebec::Application.routes.draw do |map|
+  devise_for :users, :controllers => { :confirmations => "authentication/confirmations", :passwords => "authentication/passwords", :registrations => "authentication/registrations", :sessions => "authentication/sessions", :unlock => "authentication/unlock" }
+
   resources :blog_posts
   
-  map.login 'login', :controller => 'user_sessions', :action => 'new'
-  map.logout 'logout', :controller => 'user_sessions', :action => 'destroy'
-  map.signup 'signup', :controller => 'users', :action => 'new'  
-  
-  resources :user_sessions
-  resources :users
   resources :overviews
 
   # The priority is based upon order of creation:

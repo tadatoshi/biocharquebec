@@ -16,7 +16,6 @@ gem "sqlite3-ruby", :require => "sqlite3"
 # gem "hpricot", "0.6"
 # gem "sqlite3-ruby", :require => "sqlite3"
 # gem "aws-s3", :require => "aws/s3"
-gem "authlogic", :git => "git://github.com/odorcicd/authlogic.git", :branch => "rails3"
 gem "mongo_mapper"
 gem "mongo_ext"
 gem "bson_ext" # For mongo_mapper
