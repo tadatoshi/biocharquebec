@@ -1,6 +1,10 @@
 require 'spec_helper'
 
 describe BlogPostsController do
+  
+  before(:each) do
+    I18n.locale = "en"
+  end  
 
   def mock_blog_post(stubs={})
     @mock_blog_post ||= mock_model(BlogPost, stubs).as_null_object
@@ -8,7 +12,7 @@ describe BlogPostsController do
 
   describe "GET index" do
     it "assigns all blog_posts as @blog_posts" do
-      BlogPost.stub(:all) { [mock_blog_post] }
+      BlogPost.should_receive(:all).with(:locale => "en").and_return([mock_blog_post])
       get :index
       assigns(:blog_posts).should eq([mock_blog_post])
     end

@@ -2,7 +2,7 @@ class OverviewsController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index]  
   
   def index
-    @overviews = Overview.all
+    @overviews = Overview.in_current_locale.all
 
     respond_to do |format|
       format.html # index.html.erb
