@@ -17,6 +17,10 @@ en:
     french: "French"
     title: "Title"
     content: "Content"
+    add: "Add"
+    back: "Back"
+    edit: "Edit"
+    show: "Show"
 
   header:
     title_message: "Biochar Quebec is a group of people who are interested in biochar."

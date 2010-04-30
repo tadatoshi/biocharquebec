@@ -1,6 +1,6 @@
-<h1>Editing overview</h1>
+<h1><%= t("common.edit") %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @overview %> |
-<%= link_to 'Back', overviews_path %>
+<%= link_to t("common.show"), @overview %> |
+<%= link_to t("common.back"), overviews_path %>

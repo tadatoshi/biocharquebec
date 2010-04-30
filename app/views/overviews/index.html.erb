@@ -1,8 +1,13 @@
-<h1>Listing overviews</h1>
+<% if !Rails.env.test? && user_signed_in? %>
+  <p id="add"><%= link_to t("common.add"), new_overview_path %></p>
+<% end %>
 
-
-Test
-
-<br />
-
-<%= link_to 'New overview', new_overview_path %>
+<div id="content-list">
+  
+  <% @overviews.each do |overview| %>
+  <div>
+    <h3><a href="#"><%= overview.title %></a></h3>
+    <p><%= overview.content %></p>
+  </div>
+  <% end %>
+</div>

@@ -51,7 +51,7 @@ describe BlogPostsController do
         BlogPost.stub(:new) { mock_blog_post(:save => true) }
         post :create, :blog_post => {}
         # TODO: RSpec 2.0.0.beta.5 with Ruby on Rails 3.0.0.beta2 fails with this:
-        # response.should redirect_to(blog_post_url(mock_blog_post))
+        # response.should redirect_to(blog_posts_url)
       end
     end
 
@@ -90,7 +90,7 @@ describe BlogPostsController do
         BlogPost.stub(:find) { mock_blog_post(:update_attributes => true) }
         put :update, :id => "1"
         # TODO: RSpec 2.0.0.beta.5 with Ruby on Rails 3.0.0.beta2 fails with this:
-        # response.should redirect_to(blog_post_url(mock_blog_post))
+        # response.should redirect_to(blog_posts_url)
       end
     end
 

@@ -1,6 +1,9 @@
+input[type="text"], textarea {
+  width: 100%;
+}
+
 #middle #main #main-section p#add {
   margin-right: 18px;
-  text-align: right;
 }
 
 #content-list {

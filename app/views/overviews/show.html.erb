@@ -8,11 +8,5 @@
   <%= @overview.description %>
 </p>
 
-<p>
-  <b>Locale:</b>
-  <%= @overview.locale %>
-</p>
-
-
-<%= link_to 'Edit', edit_overview_path(@overview) %> |
-<%= link_to 'Back', overviews_path %>
+<%= link_to t("common.edit"), edit_overview_path(@overview) %> |
+<%= link_to t("common.back"), overviews_path %>

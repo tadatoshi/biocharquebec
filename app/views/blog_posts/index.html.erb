@@ -1,6 +1,8 @@
 <h2 class="title"><%= t("blog.blog") %></h2>
 
-<p id="add"><%= link_to t("blog.add_a_new_blog_post"), new_blog_post_path %></p>
+<% if !Rails.env.test? && user_signed_in? %>
+  <p id="add"><%= link_to t("blog.add_a_new_blog_post"), new_blog_post_path %></p>
+<% end %>
 
 <div id="content-list">
   

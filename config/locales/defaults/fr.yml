@@ -150,7 +150,10 @@ fr:
     french: "Français"
     title: "Titre"
     content: "Contenu"     
-    welcome: "Bienvenu"        
+    add: "Ajouter"  
+    back: "Retourner"
+    edit: "Modifier"
+    show: "Montrer"
 
   header:
     title_message: "Biochar Québec est un group de personnes qui sont intéressé à biochar."    
