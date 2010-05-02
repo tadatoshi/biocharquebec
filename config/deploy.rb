@@ -6,9 +6,9 @@ set :scm, :git
 
 set :deploy_to, "~/public_html/#{application}"
 
-role :web, "ec2-184-73-18-88.compute-1.amazonaws.com"                          # Your HTTP server, Apache/etc
-role :app, "ec2-184-73-18-88.compute-1.amazonaws.com"                          # This may be the same as your `Web` server
-role :db,  "ec2-184-73-18-88.compute-1.amazonaws.com", :primary => true # This is where Rails migrations will run
+role :web, "ec2-174-129-235-98.compute-1.amazonaws.com"                          # Your HTTP server, Apache/etc
+role :app, "ec2-174-129-235-98.compute-1.amazonaws.com"                          # This may be the same as your `Web` server
+role :db,  "ec2-174-129-235-98.compute-1.amazonaws.com", :primary => true # This is where Rails migrations will run
 # role :db,  "tadatoshi.ca"
 
 # ssh_options[:identity_file] = "/Users/tadatoshi/.amazon/elastic_compute_cloud/tadatoshikey.pem"
