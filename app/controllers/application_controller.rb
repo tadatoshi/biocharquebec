@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   def default_url_options(options={})  
     logger.debug "default_url_options is passed options: #{options.inspect}\n"  
     options.merge!({ :locale => I18n.locale })
-    options.merge!({ :host => "tadatoshi.ca" }) if Rails.env.production? 
+    options.merge!({ :host => "biocharquebec.org" }) if Rails.env.production? 
     options
   end
 

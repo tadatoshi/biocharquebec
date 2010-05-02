@@ -1,4 +1,4 @@
-input[type="text"], textarea {
+.long-textfield, textarea {
   width: 100%;
 }
 
