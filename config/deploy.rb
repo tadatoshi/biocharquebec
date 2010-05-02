@@ -1,3 +1,10 @@
+set :default_environment, { 
+  'PATH' => "~/.rvm/rubies/ruby-1.9.1-p378/bin:~/.rvm/gems/ruby-1.9.1-p378/bin:~/.rvm/bin:$PATH",
+  'RUBY_VERSION' => 'ruby 1.9.1',
+  'GEM_HOME' => '~/.rvm/gems/ruby-1.9.1-p378',
+  'GEM_PATH' => '~/.rvm/gems/ruby-1.9.1-p378' 
+}
+
 set :application, "biocharquebec"
 set :repository,  "git@github.com:tadatoshi/biocharquebec.git"
 
