@@ -30,7 +30,7 @@ set :user, "ubuntu"
 namespace :deploy do
 
   task :copy_database_configuration do
-    production_db_config = "#{deploy_to}/custom_directory/production.database.yml"
+    production_db_config = "#{deploy_to}/shared/db/production.database.yml"
     run "cp #{production_db_config} #{release_path}/config/database.yml"
   end
   
@@ -48,7 +48,8 @@ namespace :thin do
   %w(start stop restart).each do |action| 
   desc "#{action} the app's Thin Cluster"  
     task action.to_sym, :roles => :app do  
-      run "/etc/init.d/thin #{action}" 
+      run "cd #{release_path}"
+      run "thin #{action} -e production -p 5000" 
     end
   end
 end
