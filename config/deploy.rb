@@ -36,6 +36,13 @@ namespace :deploy do
   
   after "deploy:update_code" , "deploy:copy_database_configuration"
   
+  task :bundle_install do
+    run "cd #{current_path}"
+    run "bundle install --without test cucumber"
+  end
+
+  after "deploy:update_code" , "deploy:bundle_install"
+
   %w(start stop restart).each do |action| 
     desc "#{action} the Thin processes"  
     task action.to_sym do
