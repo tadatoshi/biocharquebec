@@ -48,7 +48,7 @@ namespace :deploy do
     run "bundle install --without test cucumber"
   end
 
-  after "deploy:update_code" , "deploy:bundle_install"
+  # after "deploy:update_code" , "deploy:bundle_install"
 
   %w(start stop restart).each do |action| 
     desc "#{action} the Thin processes"  
