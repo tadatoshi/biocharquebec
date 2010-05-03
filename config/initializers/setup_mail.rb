@@ -1,9 +1,9 @@
 ActionMailer::Base.smtp_settings = {  
   :address              => "smtp.gmail.com",  
   :port                 => 587,  
-  :domain               => "tadatoshi.org",  
-  :user_name            => "biocharquebec@tadatoshi.org",  
-  :password             => "633J77",  
+  :domain               => "biocharquebec.org",  
+  :user_name            => "admin@biocharquebec.org",  
+  :password             => "33Y273",  
   :authentication       => "plain",  
   :enable_starttls_auto => true  
 }

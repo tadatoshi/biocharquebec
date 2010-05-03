@@ -32,5 +32,5 @@ Biocharquebec::Application.configure do
   # config.threadsafe!
   
   # Added for Devise (by tadatoshi):
-  config.action_mailer.default_url_options = { :host => 'tadatoshi.ca' }
+  config.action_mailer.default_url_options = { :host => 'biocharquebec.org' }
 end
