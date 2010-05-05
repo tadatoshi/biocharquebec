@@ -29,7 +29,7 @@ fr:
       send_instructions: "Vous allez recevoir un courriel avec des instructions pour confimer votre compte."
       confirmed: "Votre compte a été confirmé. Vous êtes maintenant connecté."
     registrations:
-      signed_up: "Votre inscription est enregistrée. Si c'est activé, un courriel de confirmation vous a été envoyé."
+      signed_up: "Votre inscription est enregistrée."
       updated: "Votre mise à jour est prise en compte."
       destroyed: "Bye! Votre compte est annulé. Nous souhaitons vous revoir bientôt."
     unlocks:
