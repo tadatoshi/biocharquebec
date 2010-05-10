@@ -34,13 +34,14 @@ describe BlogPostsController do
     end
   end
 
-  describe "GET edit" do
-    it "assigns the requested blog_post as @blog_post" do
-      BlogPost.stub(:find).with("37") { mock_blog_post }
-      get :edit, :id => "37"
-      assigns(:blog_post).should be(mock_blog_post)
-    end
-  end
+  # Note: Routing is excluded for edit in routes.rb
+  # describe "GET edit" do
+  #   it "assigns the requested blog_post as @blog_post" do
+  #     BlogPost.stub(:find).with("37") { mock_blog_post }
+  #     get :edit, :id => "37"
+  #     assigns(:blog_post).should be(mock_blog_post)
+  #   end
+  # end
 
   describe "POST create" do
 
@@ -75,58 +76,60 @@ describe BlogPostsController do
 
   end
 
-  describe "PUT update" do
+  # Note: Routing is excluded for update in routes.rb
+  # describe "PUT update" do
+  # 
+  #   describe "with valid params" do
+  #     it "updates the requested blog_post" do
+  #       BlogPost.should_receive(:find).with("37") { mock_blog_post }
+  #       mock_blog_post.should_receive(:update_attributes).with({'these' => 'params'})
+  #       put :update, :id => "37", :blog_post => {'these' => 'params'}
+  #     end
+  # 
+  #     it "assigns the requested blog_post as @blog_post" do
+  #       BlogPost.stub(:find) { mock_blog_post(:update_attributes => true) }
+  #       put :update, :id => "1"
+  #       assigns(:blog_post).should be(mock_blog_post)
+  #     end
+  # 
+  #     it "redirects to the blog_post" do
+  #       BlogPost.stub(:find) { mock_blog_post(:update_attributes => true) }
+  #       put :update, :id => "1"
+  #       # TODO: RSpec 2.0.0.beta.5 with Ruby on Rails 3.0.0.beta2 fails with this:
+  #       # response.should redirect_to(blog_posts_url)
+  #     end
+  #   end
+  # 
+  #   describe "with invalid params" do
+  #     it "assigns the blog_post as @blog_post" do
+  #       BlogPost.stub(:find) { mock_blog_post(:update_attributes => false) }
+  #       put :update, :id => "1"
+  #       assigns(:blog_post).should be(mock_blog_post)
+  #     end
+  # 
+  #     it "re-renders the 'edit' template" do
+  #       BlogPost.stub(:find) { mock_blog_post(:update_attributes => false) }
+  #       put :update, :id => "1"
+  #       response.should render_template(:edit)
+  #     end
+  #   end
+  # 
+  # end
 
-    describe "with valid params" do
-      it "updates the requested blog_post" do
-        BlogPost.should_receive(:find).with("37") { mock_blog_post }
-        mock_blog_post.should_receive(:update_attributes).with({'these' => 'params'})
-        put :update, :id => "37", :blog_post => {'these' => 'params'}
-      end
-
-      it "assigns the requested blog_post as @blog_post" do
-        BlogPost.stub(:find) { mock_blog_post(:update_attributes => true) }
-        put :update, :id => "1"
-        assigns(:blog_post).should be(mock_blog_post)
-      end
-
-      it "redirects to the blog_post" do
-        BlogPost.stub(:find) { mock_blog_post(:update_attributes => true) }
-        put :update, :id => "1"
-        # TODO: RSpec 2.0.0.beta.5 with Ruby on Rails 3.0.0.beta2 fails with this:
-        # response.should redirect_to(blog_posts_url)
-      end
-    end
-
-    describe "with invalid params" do
-      it "assigns the blog_post as @blog_post" do
-        BlogPost.stub(:find) { mock_blog_post(:update_attributes => false) }
-        put :update, :id => "1"
-        assigns(:blog_post).should be(mock_blog_post)
-      end
-
-      it "re-renders the 'edit' template" do
-        BlogPost.stub(:find) { mock_blog_post(:update_attributes => false) }
-        put :update, :id => "1"
-        response.should render_template(:edit)
-      end
-    end
-
-  end
-
-  describe "DELETE destroy" do
-    it "destroys the requested blog_post" do
-      BlogPost.should_receive(:find).with("37") { mock_blog_post }
-      mock_blog_post.should_receive(:destroy)
-      delete :destroy, :id => "37"
-    end
-
-    it "redirects to the blog_posts list" do
-      BlogPost.stub(:find) { mock_blog_post(:destroy => true) }
-      delete :destroy, :id => "1"
-      # TODO: RSpec 2.0.0.beta.5 with Ruby on Rails 3.0.0.beta2 fails with this:
-      # response.should redirect_to(blog_posts_url)
-    end
-  end
+  # Note: Routing is excluded for destroy in routes.rb
+  # describe "DELETE destroy" do
+  #   it "destroys the requested blog_post" do
+  #     BlogPost.should_receive(:find).with("37") { mock_blog_post }
+  #     mock_blog_post.should_receive(:destroy)
+  #     delete :destroy, :id => "37"
+  #   end
+  # 
+  #   it "redirects to the blog_posts list" do
+  #     BlogPost.stub(:find) { mock_blog_post(:destroy => true) }
+  #     delete :destroy, :id => "1"
+  #     # TODO: RSpec 2.0.0.beta.5 with Ruby on Rails 3.0.0.beta2 fails with this:
+  #     # response.should redirect_to(blog_posts_url)
+  #   end
+  # end
 
 end
