@@ -18,10 +18,16 @@
     <% end %>
   </div>
 
-  <div id="content-sub-list">
-	  <p>
-      <h5><%= t("blog.add_a_comment") %></h5>
-      <%= render 'form' %>
-    </p>
-  </div>
+  <% unless Rails.env.test? %>
+    <% if user_signed_in? %>
+      <div id="content-sub-list">
+        <p>
+          <h5><%= t("blog.add_a_comment") %></h5>
+          <%= render 'form' %>
+        </p>
+      </div>
+    <% else %>
+      <%= link_to t("common.sign_in"), new_user_session_url %>
+    <% end %>
+  <% end %>
 </div>
