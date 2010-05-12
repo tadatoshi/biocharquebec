@@ -1,0 +1,27 @@
+<h2 class="title"><%= t("blog.blog") %></h2>
+
+<p id="main-link"><%= link_to t("common.back"), blog_posts_url %></p>
+
+<div id="content-list">
+  
+  <div>
+    <h3><%= @blog_post.title %></h3>
+    <p><%= @blog_post.content %></p>
+  </div>  
+  
+  <div id="content-sub-list">
+    <h4><%= t("blog.comments") %></h4>
+    <% @comments.each do |comment| %>
+      <div>
+        <p><%= comment.content %></p>
+      </div>
+    <% end %>
+  </div>
+
+  <div id="content-sub-list">
+	  <p>
+      <h5><%= t("blog.add_a_comment") %></h5>
+      <%= render 'form' %>
+    </p>
+  </div>
+</div>

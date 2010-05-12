@@ -1,15 +1,16 @@
 <h2 class="title"><%= t("blog.blog") %></h2>
 
 <% if !Rails.env.test? && user_signed_in? %>
-  <p id="add"><%= link_to t("blog.add_a_new_blog_post"), new_blog_post_path %></p>
+  <p id="main-link"><%= link_to t("blog.add_a_new_blog_post"), new_blog_post_path %></p>
 <% end %>
 
 <div id="content-list">
   
   <% @blog_posts.each do |blog_post| %>
   <div>
-    <h3><a href="#"><%= blog_post.title %></a></h3>
+    <h3><%= blog_post.title %></h3>
     <p><%= blog_post.content %></p>
+    <p><%= link_to t("blog.comments"), blog_post_comments_url(blog_post) %></p>
   </div>
   <% end %>
 </div>

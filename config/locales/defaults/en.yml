@@ -45,4 +45,6 @@ en:
     add_a_new_blog_post: "Add a new blog post"
     mail:
       new_blog_post: "New blog post"
+    comments: "Comments"
+    add_a_comment: "Add a comment"
     

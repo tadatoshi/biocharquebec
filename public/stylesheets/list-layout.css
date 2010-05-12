@@ -2,7 +2,7 @@
   width: 100%;
 }
 
-#middle #main #main-section p#add {
+#middle #main #main-section p#main-link {
   margin-right: 18px;
 }
 
@@ -17,4 +17,10 @@
   }
   #content-list p {
     margin-left: 36px;
+  }
+  #content-list #content-sub-list {
+	  margin-left: 36px;
+  }
+  #content-list #content-sub-list p {
+	  margin-left: 18px;
   }

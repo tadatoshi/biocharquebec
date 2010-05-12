@@ -1,8 +1,12 @@
 Biocharquebec::Application.routes.draw do |map|
   devise_for :users, :controllers => { :confirmations => "authentication/confirmations", :passwords => "authentication/passwords", :registrations => "authentication/registrations", :sessions => "authentication/sessions", :unlock => "authentication/unlock" }
 
-  resources :blog_posts, :except => [:edit, :update, :destroy]
-  
+  resources :blog_posts, :except => [:edit, :update, :destroy] do
+    scope :module => "blogs" do
+      resources :comments
+    end
+  end
+
   resources :overviews
 
   # The priority is based upon order of creation:

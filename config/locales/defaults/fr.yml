@@ -177,4 +177,6 @@ fr:
     blog_post: "Poste de blogue"
     add_a_new_blog_post: "Ajouter une nouveau poste de blogue"    
     mail:
-      new_blog_post: "Nouveau poste de blogue"    
+      new_blog_post: "Nouveau poste de blogue"
+    comments: "Commentaires"
+    add_a_comment: "Ajouter un commentaire"

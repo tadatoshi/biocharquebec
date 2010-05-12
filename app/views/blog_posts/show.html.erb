@@ -1,12 +1,10 @@
-<p>
-  <b>Title:</b>
-  <%= @blog_post.title %>
-</p>
+<div id="content-list">
+  <div>
+    <h3><%= @blog_post.title %></h3>
+    <p><%= @blog_post.content %></p>
+  </div>
+</div>
 
-<p>
-  <b>Content:</b>
-  <%= @blog_post.content %>
-</p>
 
 
 <%= link_to t("common.back"), blog_posts_path %>

@@ -20,7 +20,7 @@ module ApplicationHelper
   def body_css_class
     "#{controller.controller_name.dasherize}-body"
   end
-  
+
   private
     def url_with_other_locale(url)
       other_locale_parameter = "locale=#{pick_other_locale_and_i18n_language_key[:locale]}"

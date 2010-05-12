@@ -26,6 +26,9 @@ body {
 img { 
   border: none;
 }
+h3, h4 {
+  color: #4d3900;
+}
 a {
   color: #4d3900; 
   text-decoration: none;
