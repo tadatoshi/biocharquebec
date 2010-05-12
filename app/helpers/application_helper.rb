@@ -18,7 +18,12 @@ module ApplicationHelper
   end
   
   def body_css_class
-    "#{controller.controller_name.dasherize}-body"
+    # TODO: Find a better way:
+    if controller.controller_name == "comments"
+      "blog-posts-body"
+    else
+      "#{controller.controller_name.dasherize}-body"
+    end
   end
 
   private
