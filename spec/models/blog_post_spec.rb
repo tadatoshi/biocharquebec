@@ -26,8 +26,13 @@ describe BlogPost do
         
         expect do
           blog_post = BlogPost.create(:title => nil, :locale => "en")
-          blog_post.errors.on(:title).should_not be_nil
+          blog_post.errors[:title].should_not be_empty
         end.to change { BlogPost.count }.by(0)
+        
+        expect do
+          blog_post = BlogPost.create(:title => "Some title", :locale => "en")
+          blog_post.errors[:title].should be_empty
+        end.to change { BlogPost.count }.by(1)        
         
       end
       

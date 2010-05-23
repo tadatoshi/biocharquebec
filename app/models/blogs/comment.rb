@@ -1,13 +1,17 @@
 class Blogs::Comment
-  include MongoMapper::Document
+  include Mongoid::Document
 
-  key :blog_post_id, ObjectId, :required => true, :index => true
-  key :content, String, :required => true
-  key :locale, String, :required => true, :index => true
+  field :content
+  field :locale
+
+  index :locale
   
-  before_validation :assign_current_locale
+  before_validate :assign_current_locale  
+
+  validates :content, :presence => true
+  validates :locale, :presence => true  
   
-  belongs_to :blog_post
+  embedded_in :blog_post, :inverse_of => :comments
   
   private
     def assign_current_locale

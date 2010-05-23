@@ -16,9 +16,8 @@ gem "sqlite3-ruby", :require => "sqlite3"
 # gem "hpricot", "0.6"
 # gem "sqlite3-ruby", :require => "sqlite3"
 # gem "aws-s3", :require => "aws/s3"
-gem "mongo_mapper"
-gem "mongo_ext"
-gem "bson_ext" # For mongo_mapper
+gem "mongoid", ">=2.0.0.beta6"
+gem "bson_ext" # For mongoid
 gem "devise", "1.1.rc1"
 gem "capistrano"
 

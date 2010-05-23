@@ -1,1 +1,1 @@
-MongoMapper.database = "biocharquebec-#{Rails.env}"
+# MongoMapper.database = "biocharquebec-#{Rails.env}"

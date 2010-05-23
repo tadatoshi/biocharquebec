@@ -5,7 +5,7 @@ class Blogs::CommentsController < ApplicationController
   before_filter :get_blog_post
 
   def index
-    @comments = @blog_post.comments.all(:locale => I18n.locale.to_s)
+    @comments = @blog_post.comments.all(:conditions => { :locale => I18n.locale.to_s })
     @comment = @blog_post.comments.build
   end
 

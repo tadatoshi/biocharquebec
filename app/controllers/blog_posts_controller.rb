@@ -4,7 +4,7 @@ class BlogPostsController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index] unless Rails.env.test? 
 
   def index
-    @blog_posts = BlogPost.all(:locale => I18n.locale.to_s)
+    @blog_posts = BlogPost.all(:conditions => { :locale => I18n.locale.to_s })
   end
 
   def show

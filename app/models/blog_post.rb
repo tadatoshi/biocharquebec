@@ -1,13 +1,19 @@
 class BlogPost
-  include MongoMapper::Document
+  include Mongoid::Document
   
-  key :title, String, :required => true, :index => true
-  key :content, String
-  key :locale, String, :required => true, :index => true
+  field :title
+  field :content
+  field :locale
+
+  index :title
+  index :locale
   
-  before_validation :assign_current_locale
+  before_validate :assign_current_locale
+
+  validates :title, :presence => true
+  validates :locale, :presence => true  
   
-  many :comments, :class_name => "Blogs::Comment"
+  embeds_many :comments, :class_name => "Blogs::Comment"
   
   private
     def assign_current_locale
