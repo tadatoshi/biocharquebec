@@ -1,3 +1,15 @@
+task :staging do
+  set :rails_env, "staging"
+  set :location, "staging.biocharquebec.org"
+  set_role
+end
+
+task :production do
+  set :rails_env, "production"
+  set :location, "biocharquebec.org"
+  set_role
+end
+
 set :default_environment, { 
   'PATH' => "~/.rvm/rubies/ruby-1.9.1-p378/bin:~/.rvm/gems/ruby-1.9.1-p378/bin:~/.rvm/bin:$PATH",
   'RUBY_VERSION' => 'ruby 1.9.1',
@@ -13,10 +25,12 @@ set :scm, :git
 
 set :deploy_to, "~/public_html/#{application}"
 
-role :web, "ec2-174-129-235-98.compute-1.amazonaws.com"                          # Your HTTP server, Apache/etc
-role :app, "ec2-174-129-235-98.compute-1.amazonaws.com"                          # This may be the same as your `Web` server
-role :db,  "ec2-174-129-235-98.compute-1.amazonaws.com", :primary => true # This is where Rails migrations will run
-# role :db,  "tadatoshi.ca"
+task :set_role do
+  role :web, location                          # Your HTTP server, Apache/etc
+  role :app, location                          # This may be the same as your `Web` server
+  role :db,  location, :primary => true # This is where Rails migrations will run
+  # role :db,  "tadatoshi.ca"
+end
 
 # ssh_options[:identity_file] = "/Users/tadatoshi/.amazon/elastic_compute_cloud/tadatoshikey.pem"
 set :user, "ubuntu"
@@ -37,8 +51,8 @@ set :user, "ubuntu"
 namespace :deploy do
 
   task :copy_database_configuration do
-    production_db_config = "#{deploy_to}/shared/db/production.database.yml"
-    run "cp #{production_db_config} #{release_path}/config/database.yml"
+    db_config = "#{deploy_to}/shared/db/#{rails_env}.database.yml"
+    run "cp #{db_config} #{release_path}/config/database.yml"
   end
   
   after "deploy:update_code" , "deploy:copy_database_configuration"
