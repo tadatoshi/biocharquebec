@@ -78,7 +78,7 @@ namespace :thin do
   %w(start stop restart).each do |action| 
   desc "#{action} the app's Thin Cluster"  
     task action.to_sym, :roles => :app do  
-      run "thin #{action} -c #{current_path} -C #{current_path}/config/thin.yml"
+      run "thin #{action} -c #{current_path} -e #{rails_env} -C #{current_path}/config/thin.yml"
     end
   end
 end
