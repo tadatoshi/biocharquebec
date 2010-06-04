@@ -61,8 +61,7 @@ namespace :deploy do
   after "deploy:update_code" , "deploy:copy_database_configuration"
   
   task :bundle_install do
-    run "cd #{current_path}"
-    run "rvmsudo bundle install --gemfile ../Gemfile --without test cucumber"
+    run "rvmsudo bundle install --gemfile #{deploy_to}/current/Gemfile --without test cucumber"
   end
 
   after "deploy:update_code" , "deploy:bundle_install"
