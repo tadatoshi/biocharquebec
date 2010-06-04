@@ -55,13 +55,13 @@ namespace :deploy do
     run "cp #{db_config} #{release_path}/config/database.yml"
     
     mongoid_config = "#{deploy_to}/shared/db/#{rails_env}.mongoid.yml"
-    run "cp #{db_config} #{release_path}/config/mongoid.yml"
+    run "cp #{mongoid_config} #{release_path}/config/mongoid.yml"
   end
   
   after "deploy:update_code" , "deploy:copy_database_configuration"
   
   task :bundle_install do
-    run "rvmsudo bundle install --gemfile #{deploy_to}/current/Gemfile --without test cucumber"
+    run "rvmsudo bundle install --gemfile #{release_path}/Gemfile --without test cucumber"
   end
 
   after "deploy:update_code" , "deploy:bundle_install"
