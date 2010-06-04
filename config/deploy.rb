@@ -11,10 +11,10 @@ task :production do
 end
 
 set :default_environment, { 
-  'PATH' => "~/.rvm/rubies/ruby-1.9.1-p378/bin:~/.rvm/gems/ruby-1.9.1-p378/bin:~/.rvm/bin:$PATH",
-  'RUBY_VERSION' => 'ruby 1.9.1',
-  'GEM_HOME' => '~/.rvm/gems/ruby-1.9.1-p378',
-  'GEM_PATH' => '~/.rvm/gems/ruby-1.9.1-p378' 
+  'PATH' => "~/.rvm/rubies/ruby-1.9.2-preview3/bin:~/.rvm/gems/ruby-1.9.2-preview3/bin:~/.rvm/bin:$PATH",
+  'RUBY_VERSION' => 'ruby 1.9.2',
+  'GEM_HOME' => '~/.rvm/gems/ruby-1.9.2-preview3',
+  'GEM_PATH' => '~/.rvm/gems/ruby-1.9.2-preview3' 
 }
 
 set :application, "biocharquebec"
@@ -62,7 +62,7 @@ namespace :deploy do
   
   task :bundle_install do
     run "cd #{current_path}"
-    run "rvmsudo bundle install --without test cucumber"
+    run "rvmsudo bundle install --gemfile ../Gemfile --without test cucumber"
   end
 
   after "deploy:update_code" , "deploy:bundle_install"
