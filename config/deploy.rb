@@ -53,16 +53,19 @@ namespace :deploy do
   task :copy_database_configuration do
     db_config = "#{deploy_to}/shared/db/#{rails_env}.database.yml"
     run "cp #{db_config} #{release_path}/config/database.yml"
+    
+    mongoid_config = "#{deploy_to}/shared/db/#{rails_env}.mongoid.yml"
+    run "cp #{db_config} #{release_path}/config/mongoid.yml"
   end
   
   after "deploy:update_code" , "deploy:copy_database_configuration"
   
   task :bundle_install do
     run "cd #{current_path}"
-    run "bundle install --without test cucumber"
+    run "rvmsudo bundle install --without test cucumber"
   end
 
-  # after "deploy:update_code" , "deploy:bundle_install"
+  after "deploy:update_code" , "deploy:bundle_install"
 
   %w(start stop restart).each do |action| 
     desc "#{action} the Thin processes"  
