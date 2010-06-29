@@ -6,7 +6,7 @@ class Blogs::Comment
 
   index :locale
   
-  before_validate :assign_current_locale  
+  before_validation :assign_current_locale  
 
   validates :content, :presence => true
   validates :locale, :presence => true  

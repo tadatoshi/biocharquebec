@@ -2,13 +2,13 @@
 
   <div id="search">
     <h2 id="search-header"><%= t "common.search" %><span></span></h2>
-    <form id="search-form" method="POST" action="/search_contents/">
+    <%= form_tag search_contents_url, :method => :get, :id => "search-form" do %>
       <div>
-        <input type="text" id="search-keywords" name="keywords"></input>
-        <input type="image" alt=<%= t "common.search" %> src="images/search.png"></input>
+        <%= text_field_tag :query, ( @query ? @query : nil ), :class => "search-keywords" %>
+        <%= submit_tag I18n.t("common.search") %>
       </div>
-    </form>
-  </div>
+    <% end %>
+  </div> <!-- end of search -->
 
   <div id="authentication">
     <% # Because the following section contains Devise codes which depends on Warden, which is Rails Engine, testing fails %>

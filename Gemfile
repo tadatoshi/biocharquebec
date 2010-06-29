@@ -2,7 +2,7 @@
 source 'http://gemcutter.org'
 
 
-gem "rails", "3.0.0.beta3"
+gem "rails", "3.0.0.beta4"
 
 ## Bundle edge rails:
 # gem "rails", :git => "git://github.com/rails/rails.git"
@@ -20,11 +20,13 @@ gem "mongoid", ">=2.0.0.beta6"
 gem "bson_ext" # For mongoid
 gem "devise", "1.1.rc1"
 gem "capistrano"
+gem "ruby-debug19", :require => "ruby-debug"
 
 ## Bundle gems used only in certain environments:
 group :test do
   gem "rspec"
   gem "rspec-rails", ">=2.0.0.a5"
+  gem "mongoid-rspec"
 end
 group :cucumber do
   gem "cucumber"

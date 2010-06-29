@@ -10,6 +10,9 @@ module NavigationHelpers
     
     when /the home\s?page/
       '/'
+    when /the new search page/
+      new_search_path
+
     when /the blog page/
       blog_posts_url      
     

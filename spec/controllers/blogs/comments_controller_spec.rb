@@ -4,7 +4,8 @@ describe Blogs::CommentsController do
   
   before(:each) do
     I18n.locale = "en"
-  end  
+    controller.stub!(:authenticate_user!)
+  end
 
   def mock_blog_post(stubs={})
     @mock_blog_post ||= mock_model(BlogPost, stubs).as_null_object

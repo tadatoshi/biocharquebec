@@ -1,4 +1,6 @@
 Biocharquebec::Application.routes.draw do |map|
+  resources :search_contents
+
   devise_for :users, :controllers => { :confirmations => "authentication/confirmations", :passwords => "authentication/passwords", :registrations => "authentication/registrations", :sessions => "authentication/sessions", :unlock => "authentication/unlock" }
 
   resources :blog_posts, :except => [:edit, :update, :destroy] do

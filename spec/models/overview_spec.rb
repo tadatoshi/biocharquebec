@@ -41,10 +41,19 @@ describe Overview do
       overview_french_1 = Overview.create!(:title => "Quelque titre 1", :locale => "fr")
       overview_english_2 = Overview.create!(:title => "Some title 2", :locale => "en")
       
-      I18n.locale = "en"
-      
       Overview.all.should == [overview_english_1, overview_french_1, overview_english_2]
-      Overview.in_current_locale.all == [overview_english_1, overview_english_2]
+      Overview.in_current_locale == [overview_english_1, overview_english_2]
+      
+    end
+    
+    it "should find overview with a keyword" do
+      
+      overview_english_1 = Overview.create!(:title => "Some title 1", :description => "This is a temp overview", :locale => "en")
+      overview_french_1 = Overview.create!(:title => "Quelque titre 1", :description => "C'est bon. temp", :locale => "fr")
+      overview_english_2 = Overview.create!(:title => "Some title 2", :description => "This is another overview", :locale => "en")
+      overview_english_3 = Overview.create!(:title => "Some temp title 3", :description => "This is yet another overview", :locale => "en")      
+      
+      Overview.search("temp").should == [overview_english_1, overview_english_3]
       
     end
     

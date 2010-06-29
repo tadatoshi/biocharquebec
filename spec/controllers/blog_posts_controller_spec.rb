@@ -4,6 +4,7 @@ describe BlogPostsController do
   
   before(:each) do
     I18n.locale = "en"
+    controller.stub!(:authenticate_user!)
   end  
 
   def mock_blog_post(stubs={})

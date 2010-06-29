@@ -1,0 +1,9 @@
+<div id="content-list">
+  
+  <% @search_contents.each do |search_content| %>
+  <div>
+    <h3><%= search_content.model_class %> <%= link_to search_content.title, title_path(search_content.model) %></h3>
+    <p><%= search_content.content %></p>
+  </div>
+  <% end %>
+</div>

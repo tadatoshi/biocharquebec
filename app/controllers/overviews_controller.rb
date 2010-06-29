@@ -1,13 +1,11 @@
 class OverviewsController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index]  
+  respond_to :html
   
   def index
     @overviews = Overview.in_current_locale.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @overviews }
-    end
+    respond_with(@overviews)
   end
 
   # GET /overviews/1
@@ -15,10 +13,7 @@ class OverviewsController < ApplicationController
   def show
     @overview = Overview.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @overview }
-    end
+    respond_with(@overview)
   end
 
   # GET /overviews/new
@@ -26,10 +21,7 @@ class OverviewsController < ApplicationController
   def new
     @overview = Overview.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @overview }
-    end
+    respond_with(@overview)
   end
 
   # GET /overviews/1/edit

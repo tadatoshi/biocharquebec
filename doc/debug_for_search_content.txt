@@ -1,0 +1,59 @@
+tadatoshi-takahashis-computer:biocharquebec tadatoshi$ spec spec/models/search_content_spec.rb --debug
+/Users/tadatoshi/development2/projects/biocharquebec/spec/models/search_content_spec.rb:13
+search_content.title.should == "Temp title"
+(rdb:1) list=
+[8, 17] in /Users/tadatoshi/development2/projects/biocharquebec/spec/models/search_content_spec.rb
+   8      
+   9      search_content = SearchContent.new(blog_post)
+   10      
+   11      debugger
+   12      
+=> 13      search_content.title.should == "Temp title"
+   14      search_content.content.should == "This is some temp content."
+   15      search_content.locale.should == "en"
+   16      
+   17    end
+(rdb:1) step
+/Users/tadatoshi/development2/projects/biocharquebec/lib/delegate/dynamic_delegator.rb:8
+result = @terget.send(*args, &block)
+(rdb:1) list=
+[3, 12] in /Users/tadatoshi/development2/projects/biocharquebec/lib/delegate/dynamic_delegator.rb
+   3    def initialize(target)
+   4      @target = target
+   5    end
+   6  
+   7    def method_missing(*args, &block)
+=> 8      result = @terget.send(*args, &block)
+   9      @target = result if result.kind_of? @target.class
+   10      result
+   11    end  
+   12    
+(rdb:1) pp @terget.send(*args, &block)
+NoMethodError Exception: undefined method `title' for nil:NilClass
+(rdb:1) pp *args
+SyntaxError Exception: /Users/tadatoshi/development2/projects/biocharquebec/lib/delegate/dynamic_delegator.rb:8: syntax error, unexpected $end, expecting '='
+*args
+     ^
+(rdb:1) pp args
+[:title]
+(rdb:1) pp @target
+#<BlogPost _id: 4c10318d2aa8270388000001, title: "Temp title", content: "This is some temp content.", locale: "en">
+(rdb:1) pp @terget.send(*args)
+NoMethodError Exception: undefined method `title' for nil:NilClass
+(rdb:1) pp @terget.send(:title)
+NoMethodError Exception: undefined method `title' for nil:NilClass
+(rdb:1) pp @target
+#<BlogPost _id: 4c10318d2aa8270388000001, title: "Temp title", content: "This is some temp content.", locale: "en">
+(rdb:1) pp @target.title
+"Temp title"
+(rdb:1) 
+(rdb:1) pp @target.respond_to? "title"
+true
+(rdb:1) pp @target.send("title")
+"Temp title"
+(rdb:1) pp @target.send(:title)
+"Temp title"
+(rdb:1) pp @terget.send(*args)
+NoMethodError Exception: undefined method `title' for nil:NilClass
+(rdb:1) pp @target.send(:title)
+"Temp title"

@@ -1,7 +1,7 @@
 class Blogs::CommentsController < ApplicationController
   # Because the following before_filter contains Devise codes which depends on Warden, which is Rails Engine, testing fails. 
   # Hence the before_filter is not activated in test environment:
-  before_filter :authenticate_user!, :except => :index unless Rails.env.test? 
+  before_filter :authenticate_user!, :except => :index
   before_filter :get_blog_post
 
   def index
