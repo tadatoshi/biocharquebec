@@ -17,6 +17,9 @@
     <ul>
       <li id="overviews-tab"><%= link_to t("common.home"), overviews_url %></li>
       <li id="blog-posts-tab"><%= link_to t("blog.blog"), blog_posts_url %></li>
+      <% unless @search_contents.nil? %>
+        <li id="search-contents-tab"><%= link_to t("common.search"), search_contents_url(:query => @query) %></li>
+      <% end %>
     </ul>
   </div>
   

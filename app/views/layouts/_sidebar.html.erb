@@ -3,6 +3,8 @@
   <div id="search">
     <h2 id="search-header"><%= t "common.search" %><span></span></h2>
     <%= form_tag search_contents_url, :method => :get, :id => "search-form" do %>
+      <% # Note: default_url_options in application_controller doesn't work here. Probably because :method is set to :get. %>
+      <%= hidden_field_tag :locale, I18n.locale %>
       <div>
         <%= text_field_tag :query, ( @query ? @query : nil ), :class => "search-keywords" %>
         <%= submit_tag I18n.t("common.search") %>

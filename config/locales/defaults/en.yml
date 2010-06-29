@@ -48,3 +48,6 @@ en:
     comments: "Comments"
     add_a_comment: "Add a comment"
     
+  search:
+    search_result: "Search result"
+    not_found: "Text that contains the given keyword is not found."

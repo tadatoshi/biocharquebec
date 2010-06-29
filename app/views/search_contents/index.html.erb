@@ -1,9 +1,14 @@
+<h2 class="title"><%= t("search.search_result") %></h2>
+
 <div id="content-list">
+	
+	<%= t("search.not_found") if @search_contents.blank? %>
   
   <% @search_contents.each do |search_content| %>
   <div>
-    <h3><%= search_content.model_class %> <%= link_to search_content.title, title_path(search_content.model) %></h3>
+    <h3><%= search_content.model_class %> : <%= link_to search_content.title, title_path(search_content.model) %></h3>
     <p><%= search_content.content %></p>
+    <p><%= link_to title_path(search_content.model), title_path(search_content.model) %></p>
   </div>
   <% end %>
 </div>

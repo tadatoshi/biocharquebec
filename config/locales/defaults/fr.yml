@@ -180,3 +180,7 @@ fr:
       new_blog_post: "Nouveau poste de blogue"
     comments: "Commentaires"
     add_a_comment: "Ajouter un commentaire"
+
+  search:
+    search_result: "Résultat de recherche"
+    not_found: "Texte qui contient les mots clé n'est pas trouvé." 

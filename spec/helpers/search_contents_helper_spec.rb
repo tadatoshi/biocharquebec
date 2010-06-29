@@ -11,5 +11,18 @@ require 'spec_helper'
 #   end
 # end
 describe SearchContentsHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  
+  before(:each) do
+    I18n.locale = "en"
+  end  
+
+  describe "generate title path" do
+    
+    it "generates path for the given model" do
+      overview_1 = Overview.create!(:title => "Some title 1", :description => "This is a temp overview")
+      helper.title_path(overview_1).should == "/overviews/#{overview_1.id}"
+    end
+    
+  end
+  
 end

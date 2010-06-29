@@ -8,29 +8,22 @@ class OverviewsController < ApplicationController
     respond_with(@overviews)
   end
 
-  # GET /overviews/1
-  # GET /overviews/1.xml
   def show
     @overview = Overview.find(params[:id])
 
     respond_with(@overview)
   end
 
-  # GET /overviews/new
-  # GET /overviews/new.xml
   def new
     @overview = Overview.new
 
     respond_with(@overview)
   end
 
-  # GET /overviews/1/edit
   def edit
     @overview = Overview.find(params[:id])
   end
 
-  # POST /overviews
-  # POST /overviews.xml
   def create
     @overview = Overview.new(params[:overview])
 
@@ -45,8 +38,6 @@ class OverviewsController < ApplicationController
     end
   end
 
-  # PUT /overviews/1
-  # PUT /overviews/1.xml
   def update
     @overview = Overview.find(params[:id])
 
@@ -61,8 +52,6 @@ class OverviewsController < ApplicationController
     end
   end
 
-  # DELETE /overviews/1
-  # DELETE /overviews/1.xml
   def destroy
     @overview = Overview.find(params[:id])
     @overview.destroy
