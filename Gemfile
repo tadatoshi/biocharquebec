@@ -20,9 +20,12 @@ gem "mongoid", ">=2.0.0.beta6"
 gem "bson_ext" # For mongoid
 gem "devise", "1.1.rc1"
 gem "capistrano"
-gem "ruby-debug19", :require => "ruby-debug"
 
 ## Bundle gems used only in certain environments:
+group :development do
+  gem "ruby-debug19", :require => "ruby-debug"
+end
+
 group :test do
   gem "rspec"
   gem "rspec-rails", ">=2.0.0.a5"
