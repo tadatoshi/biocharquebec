@@ -4,6 +4,6 @@ Feature: Layout
   I want to see the consistent layout of the site
 
   Scenario: Tabs should be displayed
-    # When I go to the home page
-    # Then I should see "Home"
-    # And I should see "Blog"
+    When I go to the home page
+    Then I should see "Home"
+    And I should see "Blog"
