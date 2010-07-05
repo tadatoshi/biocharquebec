@@ -4,7 +4,6 @@ class OverviewsController < ApplicationController
   
   def index
     @overviews = Overview.in_current_locale.all
-
     respond_with(@overviews)
   end
 

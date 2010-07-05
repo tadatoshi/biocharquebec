@@ -12,13 +12,13 @@ Feature: Add blog post comment
   Scenario: Add the first comment
     # TODO: Find a way to log in using Devise:
     # Given I am logged in
-    When I go to the blog page
-    Then I should see "First post"
-    And I should see "This is the first post"  
-    And I should see "Second post"
-    And I should see "This is the second post"
-    And I should see "Comments"
-    When I follow "Comments"
+##    When I go to the blog page
+##    Then I should see "First post"
+##    And I should see "This is the first post"  
+##    And I should see "Second post"
+##    And I should see "This is the second post"
+##    And I should see "Comments"
+##    When I follow "Comments"
     # TODO: Find a way to log in using Devise:
     # Then I should see "Add a comment"
     # And I should see "Add"

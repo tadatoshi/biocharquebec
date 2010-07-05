@@ -38,6 +38,7 @@ group :cucumber do
   gem "cucumber-rails"
   gem "test-unit"
   gem "launchy"
+  gem "selenium-client"
 end
 # group :test do
 #   gem "webrat"

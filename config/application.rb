@@ -59,5 +59,8 @@ module Biocharquebec
     config.session_store :cookie_store, 
                          :key => '_biocharquebec_session',
                          :secret => 'a1b7aefd34983b91c1bc04a5d8e13dd3d6a0105b545f4c3c82328dad71a38ef124c02596da204de6c8c5961f3523cc85e542b3655b199957c455b38bfd23457a'
+
+    config.middleware.use "Middleware::IpAddressAuthenticationFilter"
+
   end
 end
