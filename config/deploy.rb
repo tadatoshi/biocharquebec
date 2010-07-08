@@ -34,7 +34,7 @@ set :deploy_to, "~/public_html/#{application}"
 task :set_role do
   role :web, location                          # Your HTTP server, Apache/etc
   role :app, location                          # This may be the same as your `Web` server
-  role :db,  location, :primary => true # This is where Rails migrations will run
+  role :db,  "domU-12-31-39-07-1A-51.compute-1.internal", :primary => true # This is where Rails migrations will run
   # role :db,  "tadatoshi.ca"
 end
 
@@ -65,6 +65,8 @@ namespace :deploy do
   end
   
   after "deploy:update_code" , "deploy:copy_database_configuration"
+  
+  run "which ruby > which_ruby.txt"
   
   task :bundle_install do
     run "rvmsudo bundle install --gemfile #{release_path}/Gemfile --without development test cucumber"
