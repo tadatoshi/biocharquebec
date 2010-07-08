@@ -1,20 +1,22 @@
 task :staging do
   set :rails_env, "staging"
   set :location, "staging.biocharquebec.org"
+  set :ruby_directory, "ruby-1.9.2-preview3"
   set_role
 end
 
 task :production do
   set :rails_env, "production"
   set :location, "biocharquebec.org"
+  set :ruby_directory, "ruby-1.9.2-rc1"
   set_role
 end
 
 set :default_environment, { 
-  'PATH' => "~/.rvm/rubies/ruby-1.9.2-preview3/bin:~/.rvm/gems/ruby-1.9.2-preview3/bin:~/.rvm/bin:$PATH",
-  'RUBY_VERSION' => 'ruby 1.9.2',
-  'GEM_HOME' => '~/.rvm/gems/ruby-1.9.2-preview3',
-  'GEM_PATH' => '~/.rvm/gems/ruby-1.9.2-preview3' 
+  'PATH' => "~/.rvm/rubies/#{ruby_directory}/bin:~/.rvm/gems/#{ruby_directory}/bin:~/.rvm/bin:$PATH",
+  'RUBY_VERSION' => "ruby 1.9.2",
+  'GEM_HOME' => "~/.rvm/gems/#{ruby_directory}",
+  'GEM_PATH' => "~/.rvm/gems/#{ruby_directory}" 
 }
 
 set :application, "biocharquebec"
