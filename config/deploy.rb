@@ -66,12 +66,6 @@ namespace :deploy do
   
   after "deploy:update_code", "deploy:copy_database_configuration"
   
-  task :debug do
-    run "which ruby > which_ruby.txt"
-  end
-  
-  before "deploy:bundle_install", "deploy:debug"
-  
   task :bundle_install do
     run "rvmsudo bundle install --gemfile #{release_path}/Gemfile --without development test cucumber"
   end
