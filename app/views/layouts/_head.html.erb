@@ -1,4 +1,5 @@
 <%= stylesheet_link_tag 'layout', 'style', 'list-layout', 'list-style', :media => "screen", :cache => "shared-cache-screen" %>
 <%= stylesheet_link_tag 'print', 'list-layout', 'list-style', :media => "print", :cache => "shared-cache-print" %>
-<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "jquery.rails.js", "content/content_list.js", javascript_include_tag_options %>
+<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" %>
+<%= javascript_include_tag "jquery.rails.js", "content/content_list.js", :cache => "shared-cache" %>
 <%= csrf_meta_tag %>

@@ -1,16 +1,5 @@
 module ApplicationHelper
-  
-  # Added because setting cache fails in the staging environment. 
-  #  i.e. ActionView::Template::Error (can't convert nil into String) on line #3 of ...../app/views/layouts/_head.html.erb:
-  # (20100708): Same thing happened in the production. Commenting out the section for the production:
-  def javascript_include_tag_options
-    # if Rails.env == "production"
-    #   {:cache => "shared-cache"}
-    # else
-      {}
-    # end
-  end
-  
+
   def pick_other_locale_and_i18n_language_key
 
     case I18n.locale
