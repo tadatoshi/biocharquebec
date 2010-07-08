@@ -34,7 +34,7 @@ set :deploy_to, "~/public_html/#{application}"
 task :set_role do
   role :web, location                          # Your HTTP server, Apache/etc
   role :app, location                          # This may be the same as your `Web` server
-  role :db,  "ec2-184-73-219-167.compute-1.amazonaws.com", :primary => true # This is where Rails migrations will run
+  role :db,  location, :primary => true # This is where Rails migrations will run
   # role :db,  "tadatoshi.ca"
 end
 
