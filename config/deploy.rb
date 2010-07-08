@@ -64,15 +64,19 @@ namespace :deploy do
     run "cp #{mongoid_config} #{release_path}/config/mongoid.yml"
   end
   
-  after "deploy:update_code" , "deploy:copy_database_configuration"
+  after "deploy:update_code", "deploy:copy_database_configuration"
   
-  run "which ruby > which_ruby.txt"
+  task :debug do
+    run "which ruby > which_ruby.txt"
+  end
+  
+  before "deploy:bundle_install", "deploy:debug"
   
   task :bundle_install do
     run "rvmsudo bundle install --gemfile #{release_path}/Gemfile --without development test cucumber"
   end
 
-  after "deploy:update_code" , "deploy:bundle_install"
+  after "deploy:update_code", "deploy:bundle_install"
 
   %w(start stop restart).each do |action| 
     desc "#{action} the Thin processes"  
