@@ -8,16 +8,15 @@ Feature: Search
       | title         | description                                           | locale |
       | About biochar | The pyrolysis of biomass feedstocks produces biochar. | en     |
     And the following blog_post records
-      | title       | content                            | locale |
-      | First post  | This is a blog post about biochar. | en     |
-      | Second post | This is the second post            | en     |
+      | title       | content                 | locale |
+      | First post  | This is a blog post.    | en     |
+      | Second post | This is the second post | en     |
 
   Scenario: Search contents with the specified word
     Given I am on the homepage
     When I fill in "biochar" for "query"
     And I press "Search"
     Then I should see "The pyrolysis of biomass feedstocks produces biochar."
-    # And I should see "This is a blog post about biochar."
 
   # Rails generates Delete links that use Javascript to pop up a confirmation
   # dialog and then do a HTTP POST request (emulated DELETE request).

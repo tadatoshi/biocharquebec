@@ -13,17 +13,13 @@
   </div> <!-- end of search -->
 
   <div id="authentication">
-    <% # Because the following section contains Devise codes which depends on Warden, which is Rails Engine, testing fails %>
-    <% # Hence it is excluded in test environment: %>
-    <% unless Rails.env.test? %>
-      <% if user_signed_in? %>
-        <p><%= current_user.email %></p>
-        <%= link_to t("user.edit_profile"), edit_user_registration_url %>
-        <%= link_to t("common.sign_out"), destroy_user_session_url %>
-      <% else %>
-        <%= link_to t("common.sign_up"), new_user_registration_url %>
-        <%= link_to t("common.sign_in"), new_user_session_url %>
-      <% end %>
+    <% if user_signed_in? %>
+      <p><%= current_user.email %></p>
+      <%= link_to t("user.edit_profile"), edit_user_registration_url %>
+      <%= link_to t("common.sign_out"), destroy_user_session_url %>
+    <% else %>
+      <%= link_to t("common.sign_up"), new_user_registration_url %>
+      <%= link_to t("common.sign_in"), new_user_session_url %>
     <% end %>
   </div><!-- end authentication -->
   

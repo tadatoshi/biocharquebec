@@ -4,11 +4,14 @@ Feature: Add blog post
   I want to add a blog post
 
   Scenario: Add a blog post
-    # TODO: Add user authentication:
-    # When I go to the blog page
-    # And I follow "Add a new blog post"
-    # Then I should see "Title"
-    # When I fill in the following:
-    #   | Title   | First blog post       |
-    #   | Content | This is my first post |
-    # And I follow "Submit"
+    Given I am logged in as tadatoshi@gmail.com with password temppassword
+    When I go to the blog page
+    And I follow "Add a new blog post"
+    Then I should see "Title"
+    And I should see "Content"
+    When I fill in the following:
+      | Title | First blog post |
+      | Content | This is my first post |
+    And I press "Create Blog post"
+    Then I should see "First blog post"
+    And I should see "This is my first post"
