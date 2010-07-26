@@ -1,4 +1,4 @@
-<% if !Rails.env.test? && user_signed_in? %>
+<% if user_signed_in? %>
   <p id="add"><%= link_to t("common.add"), new_overview_path %></p>
 <% end %>
 
