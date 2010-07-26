@@ -26,7 +26,7 @@ en:
     title_message: "Biochar Quebec is a group of people who are interested in biochar."
     
   footer:
-    copyright_info: "{{copyright}} © 2010 {{biochar_quebec}}, {{all_rights_reserved}}."
+    copyright_info: "%{copyright} © 2010 %{biochar_quebec}, %{all_rights_reserved}."
     copyright: "Copyright"
     all_rights_reserved: "all rights reserved"
     terms_of_service: "Terms of Service"

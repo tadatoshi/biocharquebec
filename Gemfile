@@ -19,11 +19,14 @@ gem "sqlite3-ruby", :require => "sqlite3"
 gem "mongoid", ">=2.0.0.beta6"
 gem "bson_ext" # For mongoid
 gem "devise", "1.1.rc1"
+gem "devise_invitable", :git => "http://github.com/paulrosania/devise_invitable.git"
 gem "capistrano"
+gem "leed_canada"
 
 ## Bundle gems used only in certain environments:
 group :development do
-  gem "ruby-debug19", :require => "ruby-debug"
+  # TODO: Installing ruby-debug19 fails with Ruby 1.9.2 RC2:
+  # gem "ruby-debug19", :require => "ruby-debug"
 end
 
 group :test do

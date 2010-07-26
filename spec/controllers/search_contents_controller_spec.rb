@@ -3,7 +3,7 @@ require 'spec_helper'
 describe SearchContentsController do
 
   def mock_search_content(stubs={})
-    @mock_search_content ||= mock_model(SearchContent, stubs).as_null_object
+    @mock_search_content ||= mock(SearchContent, stubs).as_null_object
   end
 
   describe "GET index" do
