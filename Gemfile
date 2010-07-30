@@ -19,10 +19,9 @@ gem "sqlite3-ruby", :require => "sqlite3"
 gem "mongoid", ">=2.0.0.beta6"
 gem "bson_ext" # For mongoid
 gem "devise", ">=1.1.1"
-# gem "devise_invitable_paulrosania_tadatoshi", "0.4.0"
 gem "rymai-devise_invitable", :require => "devise_invitable", :git => "git://github.com/rymai/devise_invitable.git", :branch => "edge"
 gem "capistrano"
-gem "leed_canada"
+# gem "leed_canada"
 
 ## Bundle gems used only in certain environments:
 group :development do

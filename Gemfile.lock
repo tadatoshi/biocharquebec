@@ -85,7 +85,6 @@ GEM
     launchy (0.3.7)
       configuration (>= 0.0.5)
       rake (>= 0.8.1)
-    leed_canada (0.1.0)
     mail (2.2.5)
       activesupport (>= 2.3.6)
       mime-types
@@ -181,7 +180,6 @@ DEPENDENCIES
   database_cleaner
   devise (>= 1.1.1)
   launchy
-  leed_canada
   mongoid (>= 2.0.0.beta6)
   mongoid-rspec
   mysql2
