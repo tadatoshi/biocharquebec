@@ -2,7 +2,7 @@
 source 'http://gemcutter.org'
 
 
-gem "rails", "3.0.0.beta4"
+gem "rails", "3.0.0.rc"
 
 ## Bundle edge rails:
 # gem "rails", :git => "git://github.com/rails/rails.git"
@@ -18,8 +18,9 @@ gem "sqlite3-ruby", :require => "sqlite3"
 # gem "aws-s3", :require => "aws/s3"
 gem "mongoid", ">=2.0.0.beta6"
 gem "bson_ext" # For mongoid
-gem "devise", "1.1.rc1"
-gem "devise_invitable", :git => "http://github.com/paulrosania/devise_invitable.git"
+gem "devise", ">=1.1.1"
+# gem "devise_invitable_paulrosania_tadatoshi", "0.4.0"
+gem "rymai-devise_invitable", :require => "devise_invitable", :git => "git://github.com/rymai/devise_invitable.git", :branch => "edge"
 gem "capistrano"
 gem "leed_canada"
 
@@ -47,6 +48,6 @@ end
 #   gem "webrat"
 # end
 group :production do
-  gem "mysql"
+  gem "mysql2"
   gem "thin"
 end

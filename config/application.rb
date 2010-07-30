@@ -14,8 +14,8 @@ module Biocharquebec
     # -- all .rb files in that directory are automatically loaded.
 
     # Add additional load paths for your own custom dirs
-    # config.load_paths += %W( #{config.root}/extras )
-    config.load_paths += %W( #{Rails.root}/lib/mailers #{Rails.root}/lib/delegate )
+    # config.autoload_paths += %W( #{config.root}/extras )
+    config.autoload_paths += %W( #{Rails.root}/lib #{Rails.root}/lib/mailers #{Rails.root}/lib/delegate )
 
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named

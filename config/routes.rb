@@ -1,5 +1,8 @@
-Biocharquebec::Application.routes.draw do |map|
-  devise_for :admins, :module => "authentication"
+Biocharquebec::Application.routes.draw do
+  # resources :invitations, :module => "authentication"
+  
+  devise_for :admins
+  # devise_for :admins, :module => "authentication"
   # devise_for :admins, :controllers => { :passwords => "authentication/passwords", :sessions => "authentication/sessions" }  
 
   resources :search_contents
