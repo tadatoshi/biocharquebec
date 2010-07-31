@@ -10,6 +10,17 @@ Feature: Manage admins
       | Password              | secret                  |
       | Password confirmation | secret                  |
     And I press "Sign up"
+    Then I should see "You have signed up successfully."
+
+  Scenario: Send an invitation
+    Given the following admins:
+      | Email                   | Password | Password confirmation |
+      | admin@biocharquebec.org | secret   | secret                |
+    And I am an administrator logged in as "admin@biocharquebec.org" with password "secret"
+    When I go to the new invitation page
+    And I fill in "admin@tadatoshi.ca" for "Email"
+    And I press "Send"
+    Then I should see "An invitation email has been sent to admin@tadatoshi.ca."
 
   # Rails generates Delete links that use Javascript to pop up a confirmation
   # dialog and then do a HTTP POST request (emulated DELETE request).

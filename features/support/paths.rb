@@ -15,7 +15,9 @@ module NavigationHelpers
     when /the new search page/
       new_search_path
     when /the blog page/
-      blog_posts_url            
+      blog_posts_url      
+    when /the new invitation page/
+      new_admin_invitation_path      
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

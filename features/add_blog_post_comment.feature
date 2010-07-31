@@ -10,7 +10,7 @@ Feature: Add blog post comment
       | Second post | This is the second post | en     |
 
   Scenario: Add the first comment
-    Given I am logged in as tadatoshi@gmail.com with password temppassword
+    Given I am logged in as "tadatoshi@gmail.com" with password "temppassword"
     When I go to the blog page
     Then I should see "First post"
     And I should see "This is the first post"  
