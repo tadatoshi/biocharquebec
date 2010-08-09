@@ -10,6 +10,10 @@ module NavigationHelpers
 
     when /the home\s?page/
       '/'
+    when /the new overview page/
+      new_overview_path
+    when /the overviews page/
+      overviews_path    
     when /the new admin page/
       new_admin_registration_path
     when /the new search page/

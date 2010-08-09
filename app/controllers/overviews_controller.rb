@@ -1,5 +1,5 @@
 class OverviewsController < ApplicationController
-  before_filter :authenticate_user!, :except => [:show, :index]  
+  before_filter :authenticate_admin!, :except => [:show, :index]
   respond_to :html
   
   def index

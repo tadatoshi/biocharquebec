@@ -5,3 +5,4 @@ tmp/**/*
 .DS_Store
 rerun.txt
 capybara*.html
+.idea
