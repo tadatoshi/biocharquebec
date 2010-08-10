@@ -2,7 +2,7 @@ task :staging do
   set :rails_env, "staging"
   set :location, "staging.biocharquebec.org"
   set_role
-  set :ruby_directory, "ruby-1.9.2-preview3"
+  set :ruby_directory, "ruby-1.9.2-rc2"
   set_default_environment
 end
 
@@ -10,7 +10,7 @@ task :production do
   set :rails_env, "production"
   set :location, "biocharquebec.org"
   set_role
-  set :ruby_directory, "ruby-1.9.2-rc1"
+  set :ruby_directory, "ruby-1.9.2-rc2"
   set_default_environment
 end
 
