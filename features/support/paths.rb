@@ -10,6 +10,9 @@ module NavigationHelpers
 
     when /the home\s?page/
       '/'
+    when /the new reference_file page/
+      new_reference_file_path
+
     when /the new overview page/
       new_overview_path
     when /the overviews page/

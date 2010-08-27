@@ -6,3 +6,4 @@ tmp/**/*
 rerun.txt
 capybara*.html
 .idea
+public/uploads/**/*

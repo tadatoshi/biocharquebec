@@ -22,6 +22,8 @@ gem "devise", ">=1.1.1"
 gem "rymai-devise_invitable", :require => "devise_invitable", :git => "git://github.com/rymai/devise_invitable.git", :branch => "edge"
 gem "capistrano"
 # gem "leed_canada"
+gem "carrierwave-rails3", :require => "carrierwave"
+gem "mini_magick"
 
 ## Bundle gems used only in certain environments:
 group :development do

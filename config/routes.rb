@@ -1,4 +1,7 @@
 Biocharquebec::Application.routes.draw do
+  match "/files/uploads/*path" => "gridfs#serve"
+  resources :reference_files
+
   # resources :invitations, :module => "authentication"
   
   # devise_for :admins
