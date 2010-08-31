@@ -62,7 +62,7 @@ describe BlogPost do
         # TODO: BlogPost.all returns Mongoid::Criteria instaed of array of models probably because of lazy loading.
         #       Investigate how to make the query evaluated when should method is called.
         #       http://groups.google.com/group/mongoid/browse_thread/thread/1b80ded372fccee5/ae7276e321cebe09?lnk=gst&q=all+returns+Criteria+object#ae7276e321cebe09
-        BlogPost.all.to_a.should == [blog_post_1, blog_post_2]
+        BlogPost.all.to_a.sort { |blog_post_a, blog_post_b| blog_post_a.title <=> blog_post_b.title }.should == [blog_post_1, blog_post_2]
         
       end
       
@@ -108,6 +108,35 @@ describe BlogPost do
     
     end    
     
+  end
+
+  context "Association between MongoDB and ActiveRecord" do
+
+    before(:each) do
+      BlogPost.delete_all
+    end
+
+    after(:each) do
+      BlogPost.delete_all
+    end
+
+    it "should get user name for a blog post" do
+
+      user = User.create!(:email => "user@tadatoshi.ca", :password => "secret", :password_confirmation => "secret")
+      blog_post = BlogPost.create!(:user_id => user.id, :title => "Blog post with user 1", :content => "This blog post is associated with a user", :locale => "en")
+
+      blog_post.user_name.should == "user@tadatoshi.ca"
+
+    end
+
+    it "should get blank string for user name when the user associated with the blog post is not found" do
+
+      blog_post = BlogPost.create!(:title => "Blog post with user 1", :content => "This blog post is associated with a user", :locale => "en")
+
+      blog_post.user_name.should == ""
+
+    end
+
   end
   
 end

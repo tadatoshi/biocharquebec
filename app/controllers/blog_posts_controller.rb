@@ -20,7 +20,7 @@ class BlogPostsController < ApplicationController
   end
 
   def create
-    @blog_post = BlogPost.new(params[:blog_post])
+    @blog_post = BlogPost.new(params[:blog_post].merge(:user_id => current_user.try(:id)))
 
     respond_to do |format|
       if @blog_post.save

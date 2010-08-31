@@ -46,10 +46,17 @@ describe BlogPostsController do
 
   describe "POST create" do
 
+    before(:each) do
+      @mock_user = mock_model(User, :id => 2)
+#      sign_in :user, @mock_user
+    end
+
     describe "with valid params" do
       it "assigns a newly created blog_post as @blog_post" do
-        BlogPost.stub(:new).with({'these' => 'params'}) { mock_blog_post(:save => true) }
-        post :create, :blog_post => {'these' => 'params'}
+        controller.should_receive(:current_user).and_return(@mock_user)
+        BlogPost.should_receive(:new).with({'title' => 'some title', "user_id" => @mock_user.id}).and_return(mock_blog_post)
+        mock_blog_post.should_receive(:save).and_return(true)
+        post :create, :blog_post => {'title' => 'some title'}
         assigns(:blog_post).should be(mock_blog_post)
       end
 
@@ -63,8 +70,10 @@ describe BlogPostsController do
 
     describe "with invalid params" do
       it "assigns a newly created but unsaved blog_post as @blog_post" do
-        BlogPost.stub(:new).with({'these' => 'params'}) { mock_blog_post(:save => false) }
-        post :create, :blog_post => {'these' => 'params'}
+        controller.should_receive(:current_user).and_return(@mock_user)
+        BlogPost.should_receive(:new).with({'title' => 'some title', "user_id" => @mock_user.id}).and_return(mock_blog_post)
+        mock_blog_post.should_receive(:save).and_return(false)
+        post :create, :blog_post => {'title' => 'some title'}
         assigns(:blog_post).should be(mock_blog_post)
       end
 

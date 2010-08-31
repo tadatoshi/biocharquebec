@@ -15,3 +15,4 @@ Feature: Add blog post
     And I press "Create Blog post"
     Then I should see "First blog post"
     And I should see "This is my first post"
+    And I should see "tadatoshi@gmail.com" within "h4"

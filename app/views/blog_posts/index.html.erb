@@ -9,6 +9,7 @@
   <% @blog_posts.each do |blog_post| %>
   <div>
     <h3><%= link_to blog_post.title, "", :class => "content-title", "data-content-id" => blog_post.id %></h3>
+    <h4><%= blog_post.user_name %></h4>
     <div class="content-detail" data-content-id=<%= blog_post.id %>>
       <p><%= blog_post.content %></p>
       <p><%= link_to t("blog.comments"), blog_post_comments_url(blog_post) %></p>
