@@ -58,8 +58,11 @@ describe BlogPost do
         BlogPost.all.should == [blog_post_1]
         
         blog_post_2 = BlogPost.create(:title => "Second blog entry", :content => "This is the second entry")
-        
-        BlogPost.all.should == [blog_post_1, blog_post_2]
+
+        # TODO: BlogPost.all returns Mongoid::Criteria instaed of array of models probably because of lazy loading.
+        #       Investigate how to make the query evaluated when should method is called.
+        #       http://groups.google.com/group/mongoid/browse_thread/thread/1b80ded372fccee5/ae7276e321cebe09?lnk=gst&q=all+returns+Criteria+object#ae7276e321cebe09
+        BlogPost.all.to_a.should == [blog_post_1, blog_post_2]
         
       end
       
