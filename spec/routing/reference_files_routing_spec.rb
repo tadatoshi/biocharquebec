@@ -3,7 +3,7 @@ require "spec_helper"
 describe ReferenceFilesController do
   describe "routing" do
 
-        it "recognizes and generates #index" do
+    it "recognizes and generates #index" do
       { :get => "/reference_files" }.should route_to(:controller => "reference_files", :action => "index")
     end
 

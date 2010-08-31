@@ -29,6 +29,8 @@ gem "mini_magick"
 group :development do
   # TODO: Installing ruby-debug19 fails with Ruby 1.9.2 RC2:
   # gem "ruby-debug19", :require => "ruby-debug"
+  gem 'ruby-debug-base19', "0.11.24"
+  gem 'ruby-debug19', "0.11.6"
 end
 
 group :test do

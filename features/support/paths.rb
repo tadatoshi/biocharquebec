@@ -12,19 +12,18 @@ module NavigationHelpers
       '/'
     when /the new reference_file page/
       new_reference_file_path
-
     when /the new overview page/
       new_overview_path
     when /the overviews page/
-      overviews_path    
+      overviews_path
     when /the new admin page/
       new_admin_registration_path
     when /the new search page/
       new_search_path
     when /the blog page/
-      blog_posts_url      
+      blog_posts_url
     when /the new invitation page/
-      new_admin_invitation_path      
+      new_admin_invitation_path
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
