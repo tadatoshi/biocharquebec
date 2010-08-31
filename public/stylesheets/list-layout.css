@@ -12,8 +12,11 @@
   margin-right: 18px;
   margin-top: 18px;
 }
-  #content-list h3, h4 {
+  #content-list h3 {
     margin-left: 18px;
+  }
+  #content-list h4 {
+    margin-left: 24px;
   }
   #content-list p {
     margin-left: 36px;
