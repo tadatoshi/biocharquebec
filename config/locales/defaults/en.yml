@@ -47,6 +47,9 @@ en:
       new_blog_post: "New blog post"
     comments: "Comments"
     add_a_comment: "Add a comment"
+
+  video:
+    videos: "Videos"
     
   search:
     search_result: "Search result"

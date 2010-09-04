@@ -7,3 +7,4 @@ Feature: Layout
     When I go to the home page
     Then I should see "Home"
     And I should see "Blog"
+    And I should see "Videos"

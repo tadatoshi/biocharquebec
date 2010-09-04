@@ -1,4 +1,6 @@
 Biocharquebec::Application.routes.draw do
+  resources :videos
+
   match "/files/uploads/*path" => "gridfs#serve"
   resources :reference_files
 

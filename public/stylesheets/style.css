@@ -58,13 +58,13 @@ a:hover {
 
 body#overviews-body #page #header #tab ul li#overviews-tab, 
 body#blog-posts-body #page #header #tab ul li#blog-posts-tab, 
-body#topics-body #page #header #tab ul li#topics-tab, 
+body#videos-body #page #header #tab ul li#videos-tab,
 body#search-contents-body #page #header #tab ul li#search-contents-tab {
   background-color: #fff8e4;
 }
   body#overviews-body #page #header #tab ul li#overviews-tab a, 
   body#blog-posts-body #page #header #tab ul li#blog-posts-tab a, 
-  body#topics-body #page #header #tab ul li#topics-tab a, 
+  body#videos-body #page #header #tab ul li#videos-tab a, 
   body#search-contents-body #page #header #tab ul li#search-contents-tab a {
     color: #4d3900;
   }

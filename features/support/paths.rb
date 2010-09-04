@@ -10,6 +10,8 @@ module NavigationHelpers
 
     when /the home\s?page/
       '/'
+    when /the videos page/
+      videos_path
     when /the new reference_file page/
       new_reference_file_path
     when /the new overview page/
