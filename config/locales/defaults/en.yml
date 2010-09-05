@@ -21,6 +21,8 @@ en:
     back: "Back"
     edit: "Edit"
     show: "Show"
+    was_successfully_created: "was successfully created"
+    was_successfully_updated: "was successfully updated"
 
   header:
     title_message: "Biochar Quebec is a group of people who are interested in biochar."
@@ -49,7 +51,12 @@ en:
     add_a_comment: "Add a comment"
 
   video:
+    video: "Video"
     videos: "Videos"
+    thumbnail_file_path: "Thumbnail file path"
+    video_file_path: "Video file path"
+    add_new_video_info: "Add new video info"
+    edit_video_info: "Edit video info"
     
   search:
     search_result: "Search result"

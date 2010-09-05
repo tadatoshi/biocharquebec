@@ -3,9 +3,19 @@ Feature: Manage videos
   user
   wants to view videos
   
-  Scenario: Register new video
+  Scenario: View the list of videos
     Given I am on the videos page
     Then I should see "Videos"
+
+  Scenario: Add a new video data
+    Given I am on the new video page
+    When I fill in "http://temp.ca/clip-2010-09-03-15-28-02.jpg" for "Thumbnail file path"
+    And I fill in "http://picasaweb.google.com/lh/photo/sometemp?feat=embedwebsite" for "Video file path"
+    And I fill in "Tadatoshi test" for "Title"
+    And I press "Create Video"
+    Then I should see "http://temp.ca/clip-2010-09-03-15-28-02.jpg"
+    And I should see "http://picasaweb.google.com/lh/photo/sometemp?feat=embedwebsite"
+    And I should see "Tadatoshi test"
 
   # Rails generates Delete links that use Javascript to pop up a confirmation
   # dialog and then do a HTTP POST request (emulated DELETE request).

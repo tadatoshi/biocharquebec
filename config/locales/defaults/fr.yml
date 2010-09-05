@@ -154,6 +154,8 @@ fr:
     back: "Retourner"
     edit: "Modifier"
     show: "Montrer"
+    was_successfully_created: "a réussi d'être créé"
+    was_successfully_updated: "a réussi d'être mise à jour"
 
   header:
     title_message: "Biochar Québec est un group de personnes qui sont intéressé à biochar."    
@@ -182,7 +184,12 @@ fr:
     add_a_comment: "Ajouter un commentaire"
 
   video:
+    video: "Video"  
     videos: "Videos"
+    thumbnail_file_path: "Path de fichier de Thumbnail"
+    video_file_path: "Path de fichier de Video"
+    add_new_video_info: "Ajouter nouveau video info"
+    edit_video_info: "Modifier video info"  
 
   search:
     search_result: "Résultat de recherche"

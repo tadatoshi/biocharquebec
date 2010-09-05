@@ -1,6 +1,6 @@
-<h1>Editing video</h1>
+<h1><%= t("video.edit_video_info") %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @video %> |
-<%= link_to 'Back', videos_path %>
+<%= link_to t("common.show"), @video %> |
+<%= link_to t("common.back"), videos_path %>

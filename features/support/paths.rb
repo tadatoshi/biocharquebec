@@ -12,6 +12,8 @@ module NavigationHelpers
       '/'
     when /the videos page/
       videos_path
+    when /the new video page/
+      new_video_path  
     when /the new reference_file page/
       new_reference_file_path
     when /the new overview page/

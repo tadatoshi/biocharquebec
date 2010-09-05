@@ -1,5 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<div id="content-list">
+  <div>
+    <h3><%= @video.title %></h3>
+    <p><%= @video.thumbnail_file_path %></p>
+    <p><%= @video.video_file_path %></p>
+  </div>
+</div>
 
-<%= link_to 'Edit', edit_video_path(@video) %> |
-<%= link_to 'Back', videos_path %>
+<%= link_to t("common.edit"), edit_video_path(@video) %> |
+<%= link_to t("common.back"), videos_path %>
