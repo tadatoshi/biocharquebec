@@ -9,6 +9,9 @@ p, h2, h3, h4, h5, h6 {
 p, h2, h3{
   line-height: 18px;
 }
+td {
+  padding: 5px;
+}
 
 #page {
   display: block;
