@@ -2,6 +2,11 @@ require 'spec_helper'
 
 describe ReferenceFilesController do
 
+  before(:each) do
+    I18n.locale = "en"
+    controller.stub!(:authenticate_admin!)
+  end  
+
   def mock_reference_file(stubs={})
     @mock_reference_file ||= mock_model(ReferenceFile, stubs).as_null_object
   end

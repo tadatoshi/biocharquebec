@@ -1,4 +1,5 @@
 class VideosController < ApplicationController
+  before_filter :authenticate_admin!, :except => :index
   respond_to :html
 
   def index

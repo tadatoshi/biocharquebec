@@ -1,9 +1,25 @@
+<h4><%= link_to t("video.add_new_video_info"), new_video_path %></h4>
+
+<h5><%= t("video.click_on_image_to_view_video") %></h5>
+
 <table>
   <tr>
     <th></th>
     <th></th>
     <th></th>
   </tr>
+
+<% @videos.each do |video| %>
+  <tr>
+    <td>
+      <%= link_to image_tag(video.thumbnail_file_path), video.video_file_path, :title => video.title, :class => "video-color-box" %>
+    </td>
+    <td><%= video.title %></td>
+    <td><%= link_to t("video.show_video_info"), video %></td>
+    <td><%= link_to t("video.edit_video_info"), edit_video_path(video) %></td>
+    <td><%= link_to t("video.delete_video_info"), video, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>  
 
   <tr>
     <td>

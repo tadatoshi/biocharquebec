@@ -8,8 +8,9 @@ Feature: Manage videos
     Then I should see "Videos"
 
   Scenario: Add a new video data
-    Given I am on the new video page
-    When I fill in "http://temp.ca/clip-2010-09-03-15-28-02.jpg" for "Thumbnail file path"
+    Given I am an administrator logged in as "admin@biocharquebec.org" with password "secret"
+    When I go to the new video page
+    And I fill in "http://temp.ca/clip-2010-09-03-15-28-02.jpg" for "Thumbnail file path"
     And I fill in "http://picasaweb.google.com/lh/photo/sometemp?feat=embedwebsite" for "Video file path"
     And I fill in "Tadatoshi test" for "Title"
     And I press "Create Video"

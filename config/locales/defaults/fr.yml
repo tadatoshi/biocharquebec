@@ -154,6 +154,7 @@ fr:
     back: "Retourner"
     edit: "Modifier"
     show: "Montrer"
+    destroy: "Détruire"
     was_successfully_created: "a réussi d'être créé"
     was_successfully_updated: "a réussi d'être mise à jour"
 
@@ -189,7 +190,10 @@ fr:
     thumbnail_file_path: "Path de fichier de Thumbnail"
     video_file_path: "Path de fichier de Video"
     add_new_video_info: "Ajouter nouveau video info"
-    edit_video_info: "Modifier video info"  
+    edit_video_info: "Modifier video info"
+    show_video_info: "Montrer video info"
+    delete_video_info: "Effacer video info"
+    click_on_image_to_view_video: "Cliquer sur une image pour regarder la vidéo"         
 
   search:
     search_result: "Résultat de recherche"

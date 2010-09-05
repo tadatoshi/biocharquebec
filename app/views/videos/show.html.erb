@@ -1,10 +1,14 @@
-<p id="notice"><%= notice %></p>
-
 <div id="content-list">
   <div>
     <h3><%= @video.title %></h3>
-    <p><%= @video.thumbnail_file_path %></p>
-    <p><%= @video.video_file_path %></p>
+    <p>
+      <h4><%= t("video.thumbnail_file_path") %></h4>
+      <p><%= @video.thumbnail_file_path %></p>
+    </p>
+    <p>
+      <h4><%= t("video.video_file_path") %></h4>
+      <p><%= @video.video_file_path %></p>
+    </p>
   </div>
 </div>
 

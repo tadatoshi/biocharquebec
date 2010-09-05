@@ -21,6 +21,7 @@ en:
     back: "Back"
     edit: "Edit"
     show: "Show"
+    destroy: "Destroy"
     was_successfully_created: "was successfully created"
     was_successfully_updated: "was successfully updated"
 
@@ -57,6 +58,9 @@ en:
     video_file_path: "Video file path"
     add_new_video_info: "Add new video info"
     edit_video_info: "Edit video info"
+    show_video_info: "Show video info"
+    delete_video_info: "Delete video info"
+    click_on_image_to_view_video: "Click on image to view the video"
     
   search:
     search_result: "Search result"

@@ -2,6 +2,11 @@ require 'spec_helper'
 
 describe VideosController do
 
+  before(:each) do
+    I18n.locale = "en"
+    controller.stub!(:authenticate_admin!)
+  end   
+
   def mock_video(stubs={})
     @mock_video ||= mock_model(Video, stubs).as_null_object
   end
