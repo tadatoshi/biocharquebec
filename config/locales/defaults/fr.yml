@@ -149,7 +149,8 @@ fr:
     english: "Anglais"
     french: "Français"
     title: "Titre"
-    content: "Contenu"     
+    content: "Contenu"
+    file: "Fichier"
     add: "Ajouter"  
     back: "Retourner"
     edit: "Modifier"
@@ -195,8 +196,9 @@ fr:
     delete_video_info: "Effacer video info"
     click_on_image_to_view_video: "Cliquer sur une image pour regarder la vidéo"
 
-  reference:
+  reference_file:
     reference: "Référence"
+    add_file: "Ajouter un fichier"
 
   search:
     search_result: "Résultat de recherche"

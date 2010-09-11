@@ -1,26 +1,16 @@
-<h1>Listing reference_files</h1>
+<% if admin_signed_in? %>
+  <p id="main-link"><%= link_to t("reference_file.add_file"), new_reference_file_path %></p>
+<% end %>
 
 <table>
-  <tr>
-    <th>File</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
 <% @reference_files.each do |reference_file| %>
   <tr>
-    <td><%= link_to reference_file.title, reference_file_path(reference_file) %></td>
+    <td><%= link_to reference_file.title, reference_file.file.url %></td>
     <% if admin_signed_in? %>
-      <td><%= link_to 'Edit', edit_reference_file_path(reference_file) %></td>
-      <td><%= link_to 'Destroy', reference_file, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to t("common.edit"), edit_reference_file_path(reference_file) %></td>
+      <td><%= link_to t("common.destroy"), reference_file, :confirm => 'Are you sure?', :method => :delete %></td>
     <% end %>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<% if admin_signed_in? %>
-  <%= link_to 'New Reference file', new_reference_file_path %>
-<% end %>

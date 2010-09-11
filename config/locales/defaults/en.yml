@@ -17,6 +17,7 @@ en:
     french: "French"
     title: "Title"
     content: "Content"
+    file: "file"
     add: "Add"
     back: "Back"
     edit: "Edit"
@@ -62,8 +63,9 @@ en:
     delete_video_info: "Delete video info"
     click_on_image_to_view_video: "Click on image to view the video"
 
-  reference:
+  reference_file:
     reference: "Reference"
+    add_file: "Add a file"
     
   search:
     search_result: "Search result"
