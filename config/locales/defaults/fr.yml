@@ -193,7 +193,10 @@ fr:
     edit_video_info: "Modifier video info"
     show_video_info: "Montrer video info"
     delete_video_info: "Effacer video info"
-    click_on_image_to_view_video: "Cliquer sur une image pour regarder la vidéo"         
+    click_on_image_to_view_video: "Cliquer sur une image pour regarder la vidéo"
+
+  reference:
+    reference: "Référence"
 
   search:
     search_result: "Résultat de recherche"

@@ -61,6 +61,9 @@ en:
     show_video_info: "Show video info"
     delete_video_info: "Delete video info"
     click_on_image_to_view_video: "Click on image to view the video"
+
+  reference:
+    reference: "Reference"
     
   search:
     search_result: "Search result"

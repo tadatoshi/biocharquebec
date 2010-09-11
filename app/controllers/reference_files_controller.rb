@@ -1,5 +1,5 @@
 class ReferenceFilesController < ApplicationController
-  before_filter :authenticate_admin!, :except => :index  
+  before_filter :authenticate_admin!, :except => [:index, :show]
 
   # GET /reference_files
   # GET /reference_files.xml

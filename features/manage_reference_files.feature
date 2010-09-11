@@ -6,9 +6,11 @@ Feature: Manage reference_files
   Scenario: Upload new reference_file
     Given I am an administrator logged in as "admin@biocharquebec.org" with password "secret"
     When I go to the new reference_file page
+    And I fill in "test file" for "Title"
     And I attach the file "features/upload_files/test.txt" to "reference_file[file]"
     And I press "Create Reference file"
-#    Then I should see "Reference file was successfully created."
+#    Then I should see "test file"
+#    And I should see "Reference file was successfully created."
 
   # Rails generates Delete links that use Javascript to pop up a confirmation
   # dialog and then do a HTTP POST request (emulated DELETE request).

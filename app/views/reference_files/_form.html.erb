@@ -12,6 +12,10 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :title, t("common.title") %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
     <%= f.label :file %><br />
     <%= f.file_field :file %>
   </div>

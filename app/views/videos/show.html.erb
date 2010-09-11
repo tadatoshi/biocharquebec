@@ -12,5 +12,7 @@
   </div>
 </div>
 
-<%= link_to t("common.edit"), edit_video_path(@video) %> |
-<%= link_to t("common.back"), videos_path %>
+<% if admin_signed_in? %>
+  <%= link_to t("common.edit"), edit_video_path(@video) %> |
+  <%= link_to t("common.back"), videos_path %>
+<% end %>

@@ -10,14 +10,17 @@
 
 <% @reference_files.each do |reference_file| %>
   <tr>
-    <td><%= reference_file.file %></td>
-    <td><%= link_to 'Show', reference_file %></td>
-    <td><%= link_to 'Edit', edit_reference_file_path(reference_file) %></td>
-    <td><%= link_to 'Destroy', reference_file, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to reference_file.title, reference_file_path(reference_file) %></td>
+    <% if admin_signed_in? %>
+      <td><%= link_to 'Edit', edit_reference_file_path(reference_file) %></td>
+      <td><%= link_to 'Destroy', reference_file, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Reference file', new_reference_file_path %>
+<% if admin_signed_in? %>
+  <%= link_to 'New Reference file', new_reference_file_path %>
+<% end %>

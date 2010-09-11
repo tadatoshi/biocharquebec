@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<%= image_tag @reference_file.file.url %>
+<%= link_to @reference_file.title, @reference_file.file.url %>
 
-<%= link_to 'Edit', edit_reference_file_path(@reference_file) %> |
-<%= link_to 'Back', reference_files_path %>
+<% if admin_signed_in? %>
+  <%= link_to 'Edit', edit_reference_file_path(@reference_file) %> |
+  <%= link_to 'Back', reference_files_path %>
+<% end %>

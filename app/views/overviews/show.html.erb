@@ -5,11 +5,7 @@
   </div>
 </div>
 
-<% # Because the following section contains Devise codes which depends on Warden, which is Rails Engine, testing fails %>
-<% # Hence it is excluded in test environment: %>
-<% unless Rails.env.test? %>
-  <% if user_signed_in? %>
-    <%= link_to t("common.edit"), edit_overview_path(@overview) %> |
-    <%= link_to t("common.back"), overviews_path %>
-  <% end %>
+<% if user_signed_in? %>
+  <%= link_to t("common.edit"), edit_overview_path(@overview) %> |
+  <%= link_to t("common.back"), overviews_path %>
 <% end %>
