@@ -6,6 +6,7 @@
   
   <div>
     <h3><%= @blog_post.title %></h3>
+    <h4><%= @blog_post.user_name %></h4>
     <p><%= @blog_post.content %></p>
   </div>  
   
@@ -13,6 +14,7 @@
     <h4><%= t("blog.comments") %></h4>
     <% @comments.each do |comment| %>
       <div>
+        <h5><%= comment.user_name %></h5>
         <p><%= comment.content %></p>
       </div>
     <% end %>

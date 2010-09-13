@@ -68,5 +68,40 @@ describe Blogs::Comment do
     end
     
   end
+
+  context "Association between MongoDB and ActiveRecord" do
+
+    before(:each) do
+      BlogPost.delete_all
+    end
+
+    after(:each) do
+      BlogPost.delete_all
+    end
+
+    it "should get user name for a blog post" do
+
+      user_1 = User.create!(:email => "user@tadatoshi.ca", :password => "secret", :password_confirmation => "secret")
+      user_2 = User.create!(:email => "commenter@tadatoshi.ca", :password => "secret", :password_confirmation => "secret")
+      blog_post = BlogPost.create!(:user_id => user_1.id, :title => "Blog post with user 1", :content => "This blog post is associated with a user", :locale => "en")
+      blog_post_comment = blog_post.comments.create!(:user_id => user_2.id, :content => "Good post", :locale => "en")
+
+      blog_post.user_name.should == "user@tadatoshi.ca"
+      blog_post_comment.user_name.should == "commenter@tadatoshi.ca"
+
+    end
+
+    it "should get blank string for user name when the user associated with the blog post is not found" do
+
+      user_1 = User.create!(:email => "user@tadatoshi.ca", :password => "secret", :password_confirmation => "secret")
+      blog_post = BlogPost.create!(:user_id => user_1.id, :title => "Blog post with user 1", :content => "This blog post is associated with a user", :locale => "en")
+      blog_post_comment = blog_post.comments.create!(:content => "Good post", :locale => "en")
+
+      blog_post.user_name.should == "user@tadatoshi.ca"
+      blog_post_comment.user_name.should == ""
+
+    end
+
+  end
   
 end

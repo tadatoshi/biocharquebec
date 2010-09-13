@@ -23,6 +23,7 @@ Feature: Add blog post comment
     When I fill in "I like this post." for "blogs_comment_content"
     And I press "Add"
     Then I should see "I like this post."
+    And I should see "tadatoshi@gmail.com" within "h5"
     When I follow "Back"
     Then I should see "First post"
     And I should see "This is the first post"  

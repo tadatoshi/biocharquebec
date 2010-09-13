@@ -24,6 +24,6 @@
   #content-list #content-sub-list {
 	  margin-left: 36px;
   }
-  #content-list #content-sub-list p {
-	  margin-left: 18px;
+  #content-list #content-sub-list p, h5 {
+	  margin-left: 36px;
   }

@@ -10,7 +10,7 @@ class Blogs::CommentsController < ApplicationController
   end
 
   def create
-    @comment = @blog_post.comments.build(params[:blogs_comment])
+    @comment = @blog_post.comments.build(params[:blogs_comment].merge(:user_id => current_user.try(:id)))
 
     if @comment.save
       notice_message = 'Comment was successfully created.'
