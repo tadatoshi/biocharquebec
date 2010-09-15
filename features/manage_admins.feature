@@ -6,6 +6,9 @@ Feature: Manage admins
   Scenario: Register new admin
     Given I am on the new admin page
     When I fill in the following:
+      | User name             | admin                   |
+      | First name            | Bio                     |
+      | Last name             | Char                    |
       | Email                 | admin@biocharquebec.org |
       | Password              | secret                  |
       | Password confirmation | secret                  |
@@ -14,9 +17,9 @@ Feature: Manage admins
 
   Scenario: Send an invitation
     Given the following admins:
-      | email                   | password | password_confirmation |
-      | admin@biocharquebec.org | secret   | secret                |
-    And I am an administrator logged in as "admin@biocharquebec.org" with password "secret"
+      | user_name    | email                   | password | password_confirmation |
+      | my user name | admin@biocharquebec.org | secret   | secret                |
+    And I am an administrator logged in as "admin@biocharquebec.org" with user name "my user name" and password "secret"
     When I go to the new invitation page
     And I fill in "admin@tadatoshi.ca" for "Email"
     And I press "Send"

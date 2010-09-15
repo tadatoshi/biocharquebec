@@ -13,7 +13,7 @@ Feature: Manage overviews
     Then I should not see "Add an overview"
 
   Scenario: Administrator can add an overview
-    Given I am an administrator logged in as "admin@biocharquebec.org" with password "secret"
+    Given I am an administrator logged in as "admin@biocharquebec.org" with user name "my user name" and password "secret"
     When I go to the overviews page
     Then I should see "Add"
     When I follow "Add"

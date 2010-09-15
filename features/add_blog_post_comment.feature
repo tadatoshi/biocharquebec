@@ -10,7 +10,7 @@ Feature: Add blog post comment
       | Second post | This is the second post | en     |
 
   Scenario: Add the first comment
-    Given I am logged in as "tadatoshi@gmail.com" with password "temppassword"
+    Given I am logged in as "tadatoshi@gmail.com" with user name "my user name" and password "temppassword"
     When I go to the blog page
     Then I should see "First post"
     And I should see "This is the first post"  
@@ -23,7 +23,7 @@ Feature: Add blog post comment
     When I fill in "I like this post." for "blogs_comment_content"
     And I press "Add"
     Then I should see "I like this post."
-    And I should see "tadatoshi@gmail.com" within "h5"
+    And I should see "my user name" within "h5"
     When I follow "Back"
     Then I should see "First post"
     And I should see "This is the first post"  

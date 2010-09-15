@@ -4,7 +4,7 @@ Feature: Manage reference_files
   wants to upload a file
   
   Scenario: Upload new reference_file
-    Given I am an administrator logged in as "admin@biocharquebec.org" with password "secret"
+    Given I am an administrator logged in as "admin@biocharquebec.org" with user name "my user name" and password "secret"
     When I go to the new reference_file page
     And I fill in "test file" for "Title"
     And I attach the file "features/upload_files/test.txt" to "reference_file[file]"

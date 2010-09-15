@@ -13,8 +13,8 @@ def create_my_user(params)
   user
 end
 
-Given /^I am logged in as "([^"]*)" with password "([^"]*)"$/ do |email, password|
-  @current_user = create_my_user(:email => email, :password => password)
+Given /^I am logged in as "([^"]*)" with user name "([^"]*)" and password "([^"]*)"$/ do |email, user_name, password|
+  @current_user = create_my_user(:email => email, :user_name => user_name, :password => password)
   visit new_user_session_path
   fill_in("Email", :with => email)
   fill_in("Password", :with => password)

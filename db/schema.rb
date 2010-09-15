@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100725204339) do
+ActiveRecord::Schema.define(:version => 20100913192644) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                             :default => "", :null => false
@@ -28,9 +28,13 @@ ActiveRecord::Schema.define(:version => 20100725204339) do
     t.datetime "invitation_sent_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "user_name"
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   add_index "admins", ["invitation_token"], :name => "index_admins_on_invitation_token"
+  add_index "admins", ["user_name"], :name => "index_admins_on_user_name", :unique => true
 
   create_table "overviews", :force => true do |t|
     t.string   "title"
@@ -54,9 +58,13 @@ ActiveRecord::Schema.define(:version => 20100725204339) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "user_name"
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+  add_index "users", ["user_name"], :name => "index_users_on_user_name", :unique => true
 
 end

@@ -21,8 +21,8 @@ def create_my_admin(params)
   admin
 end
 
-Given /^I am an administrator logged in as "([^"]*)" with password "([^"]*)"$/ do |email, password|
-  @current_admin = create_my_admin(:email => email, :password => password)
+Given /^I am an administrator logged in as "([^"]*)" with user name "([^"]*)" and password "([^"]*)"$/ do |email, user_name, password|
+  @current_admin = create_my_admin(:email => email, :user_name => user_name, :password => password)
   visit new_admin_session_path
   fill_in("Email", :with => email)
   fill_in("Password", :with => password)

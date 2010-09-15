@@ -122,7 +122,17 @@ describe BlogPost do
 
     it "should get user name for a blog post" do
 
-      user = User.create!(:email => "user@tadatoshi.ca", :password => "secret", :password_confirmation => "secret")
+      user = User.create!(:user_name => "My user name", :email => "user@tadatoshi.ca", :password => "secret", :password_confirmation => "secret")
+      blog_post = BlogPost.create!(:user_id => user.id, :title => "Blog post with user 1", :content => "This blog post is associated with a user", :locale => "en")
+
+      blog_post.user_name.should == "My user name"
+
+    end
+
+    it "should get email as user name for a blog post if user name is not assigned (old account)" do
+
+      user = User.new(:user_name => nil, :email => "user@tadatoshi.ca", :password => "secret", :password_confirmation => "secret")
+      user.save!(:validate => false) # Saving without running validation in order to simulate the old user without user_name
       blog_post = BlogPost.create!(:user_id => user.id, :title => "Blog post with user 1", :content => "This blog post is associated with a user", :locale => "en")
 
       blog_post.user_name.should == "user@tadatoshi.ca"

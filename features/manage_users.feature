@@ -1,22 +1,19 @@
-Feature: Manage videos
-  In order to learn the sessions of conference
+Feature: Manage users
+  In order to add some data that can be added only by members of Biochar Quebec to add some data
   user
-  wants to view videos
+  wants to register
   
-  Scenario: View the list of videos
-    Given I am on the videos page
-    Then I should see "Videos"
-
-  Scenario: Add a new video data
-    Given I am an administrator logged in as "admin@biocharquebec.org" with user name "my user name" and password "secret"
-    When I go to the new video page
-    And I fill in "http://temp.ca/clip-2010-09-03-15-28-02.jpg" for "Thumbnail file path"
-    And I fill in "http://picasaweb.google.com/lh/photo/sometemp?feat=embedwebsite" for "Video file path"
-    And I fill in "Tadatoshi test" for "Title"
-    And I press "Create Video"
-    Then I should see "http://temp.ca/clip-2010-09-03-15-28-02.jpg"
-    And I should see "http://picasaweb.google.com/lh/photo/sometemp?feat=embedwebsite"
-    And I should see "Tadatoshi test"
+  Scenario: Register new user
+    Given I am on the new user page
+    When I fill in the following:
+      | User name             | user                    |
+      | First name            | Bio                     |
+      | Last name             | Char                    |
+      | Email                 | user@biocharquebec.org  |
+      | Password              | secret                  |
+      | Password confirmation | secret                  |
+    And I press "Sign up"
+    Then I should see "You have signed up successfully."
 
   # Rails generates Delete links that use Javascript to pop up a confirmation
   # dialog and then do a HTTP POST request (emulated DELETE request).
@@ -41,15 +38,15 @@ Feature: Manage videos
   # of the tags above is to modify your views to use <button> instead. You can
   # see how in http://github.com/jnicklas/capybara/issues#issue/12
   #
-#  Scenario: Delete video
-#    Given the following videos:
+#  Scenario: Delete user
+#    Given the following users:
 #      ||
 #      ||
 #      ||
 #      ||
 #      ||
-#    When I delete the 3rd video
-#    Then I should see the following videos:
+#    When I delete the 3rd user
+#    Then I should see the following users:
 #      ||
 #      ||
 #      ||

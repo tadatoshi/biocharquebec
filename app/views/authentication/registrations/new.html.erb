@@ -3,13 +3,22 @@
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <p><%= f.label :email %></p>
+  <p><%= f.label :user_name, t("authentication.common.user_name") %></p>
+  <p><%= f.text_field :user_name %></p>
+
+  <p><%= f.label :first_name, t("authentication.common.first_name") %></p>
+  <p><%= f.text_field :first_name %></p>
+
+  <p><%= f.label :last_name, t("authentication.common.last_name") %></p>
+  <p><%= f.text_field :last_name %></p>
+
+  <p><%= f.label :email, t("authentication.common.email") %></p>
   <p><%= f.text_field :email %></p>
 
-  <p><%= f.label :password %></p>
+  <p><%= f.label :password, t("authentication.common.password") %></p>
   <p><%= f.password_field :password %></p>
 
-  <p><%= f.label :password_confirmation %></p>
+  <p><%= f.label :password_confirmation, t("authentication.common.password_confirmation") %></p>
   <p><%= f.password_field :password_confirmation %></p>
 
   <p><%= f.submit t("authentication.common.sign_up") %></p>

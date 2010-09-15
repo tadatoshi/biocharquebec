@@ -17,10 +17,14 @@ class Blogs::Comment
 
   def user_name
     begin
-      User.find(self.user_id).try(:email)
+      user = User.find(self.user_id)
+      unless user_name = user.try(:user_name)
+        user_name = user.try(:email)
+      end
     rescue ActiveRecord::RecordNotFound => err
-      ""
+      user_name = ""
     end
+    user_name
   end
   
   private
