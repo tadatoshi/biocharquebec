@@ -65,7 +65,14 @@ namespace :deploy do
   end
   
   after "deploy:update_code", "deploy:copy_database_configuration"
-  
+
+  task :symlink_uploads_directory do
+    uploads_directory = "#{deploy_to}/shared/uploads"
+    run "ln -s #{uploads_directory} #{release_path}/public/uploads"
+  end
+
+  after "deploy:update_code", "deploy:symlink_uploads_directory"
+
   task :bundle_install do
     run "rvmsudo bundle install --gemfile #{release_path}/Gemfile --without development test cucumber"
   end
