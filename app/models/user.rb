@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
   validates :user_name, :presence => true, :uniqueness => true
 
   has_many :blog_posts
+
+  def user_name_for_display
+    self.user_name ? self.user_name : self.email
+  end
 end

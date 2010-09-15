@@ -14,7 +14,7 @@
 
   <div id="authentication">
     <% if user_signed_in? %>
-      <p><%= current_user.email %></p>
+      <p><%= current_user.user_name_for_display %></p>
       <%= link_to t("user.edit_profile"), edit_user_registration_url %>
       <%= link_to t("common.sign_out"), destroy_user_session_url %>
     <% else %>

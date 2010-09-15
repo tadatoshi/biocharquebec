@@ -72,4 +72,18 @@ describe User do
 
   end
 
+  it "should get user_name or email if user_name doesn't exist for user_name_for_display" do
+
+    user_1 = User.create(:user_name => "temp", :email => "user1@tadatoshi.ca", :password => "secret", :password_confirmation => "secret")
+
+    user_1.user_name_for_display.should == "temp"
+
+    user_2 = User.new(:user_name => nil, :email => "user2@tadatoshi.ca", :password => "secret", :password_confirmation => "secret")
+    user_2.save!(:validate => false)
+
+    user_2.user_name_for_display.should == "user2@tadatoshi.ca"
+
+  end
+
+
 end
