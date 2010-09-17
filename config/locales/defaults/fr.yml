@@ -160,7 +160,7 @@ fr:
     was_successfully_updated: "a réussi d'être mise à jour"
 
   header:
-    title_message: "Biochar Québec est un group de personnes qui sont intéressé à biochar."    
+    title_message: "Biochar-Québec est un groupe de personnes intéressées à l’étude du biochar."
     
   footer:
     copyright_info: "%{copyright} © 2010 %{biochar_quebec}, %{all_rights_reserved}."
@@ -198,6 +198,7 @@ fr:
 
   reference_file:
     reference: "Référence"
+    publications: "Publications"
     add_file: "Ajouter un fichier"
 
   search:
