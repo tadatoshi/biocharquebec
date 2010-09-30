@@ -1,4 +1,10 @@
 Biocharquebec::Application.routes.draw do
+  resources :events do
+    scope :module => "events" do
+      resources :event_sessions
+    end
+  end
+
   resources :videos
 
   match "/files/uploads/*path" => "gridfs#serve"
