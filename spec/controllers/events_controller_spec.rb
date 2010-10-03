@@ -3,6 +3,7 @@ require 'spec_helper'
 describe EventsController do
   
   before(:each) do
+    I18n.locale = "en"    
     sign_in mock_admin(:id => "2")
   end
   
@@ -16,7 +17,7 @@ describe EventsController do
 
   describe "GET index" do
     it "assigns all events as @events" do
-      Event.stub(:all) { [mock_event] }
+      Event.stub(:all).with(:conditions => { :locale => "en" }) { [mock_event] }
       get :index
       # assigns(:events).should eq([mock_event])
     end

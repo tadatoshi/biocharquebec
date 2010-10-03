@@ -25,7 +25,14 @@
 ul.event-session {
   border: 2px solid #90ee90;
 }
-
   ul.event-session li.event-session-title {
     border-left: 2px solid #90ee90;
+    border-right: 2px solid #90ee90;
+  }
+  ul.event-session li.event-session-presenter {
+    font-style: oblique;
+    font-weight: bold;
+  }
+  ul.event-session li.event-session-affiliation {
+    font-style: oblique;
   }

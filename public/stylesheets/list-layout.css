@@ -33,20 +33,16 @@ ul.event-session {
   list-style-type: none;
   float: left;
 }
-
   ul.event-session li {
     padding: 4px;
     float: left;
   }
-
   ul.event-session li.event-session-title {
     width: 35%;	
   }
-
   ul.event-session li.event-session-link {
     float: right;
   }
-
   .end-event-session {
     clear: both;
   }
