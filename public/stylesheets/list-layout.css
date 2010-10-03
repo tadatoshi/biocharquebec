@@ -22,8 +22,31 @@
     margin-left: 36px;
   }
   #content-list #content-sub-list {
-	  margin-left: 36px;
+    margin-left: 36px;
   }
   #content-list #content-sub-list p, h5 {
-	  margin-left: 36px;
+    margin-left: 36px;
+  }
+
+ul.event-session {
+  width: 100%;
+  list-style-type: none;
+  float: left;
+}
+
+  ul.event-session li {
+    padding: 4px;
+    float: left;
+  }
+
+  ul.event-session li.event-session-title {
+    width: 35%;	
+  }
+
+  ul.event-session li.event-session-link {
+    float: right;
+  }
+
+  .end-event-session {
+    clear: both;
   }

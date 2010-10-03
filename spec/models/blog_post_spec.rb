@@ -24,10 +24,11 @@ describe BlogPost do
       
       it "should have title" do
         
-        expect do
+        # Causes error with Rspec 2.0.0.beta.22: result should have been changed by 0, but was changed by 0
+        # expect do
           blog_post = BlogPost.create(:title => nil, :locale => "en")
           blog_post.errors[:title].should_not be_empty
-        end.to change { BlogPost.count }.by(0)
+        # end.to change { BlogPost.count }.by(0)
         
         expect do
           blog_post = BlogPost.create(:title => "Some title", :locale => "en")

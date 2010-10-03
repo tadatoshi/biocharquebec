@@ -1,0 +1,31 @@
+<%= link_to t("common.back"), events_path %>
+
+<p class="event-detail" id="event-title">
+  <%= @event.title %>
+</p>
+
+<p class="event-detail">
+  <%= @event.description %>
+</p>
+
+<p class="event-detail">
+  <%=l @event.date %>
+</p>
+
+<p class="event-detail">
+  <%= @event.location %>
+</p>
+
+<p class="event-detail" id="event-program">
+  <%= I18n.t("event.program") %>
+</p>
+
+<% if admin_signed_in? %>
+  <p><%= link_to t("event.add_a_session"), new_event_session_path(@event) %></p>
+<% end %>
+
+<div id="event-sessions-container">
+  <%= render :partial => "events/event_sessions/event_session", :collection => @event.sessions %>
+</div>
+
+

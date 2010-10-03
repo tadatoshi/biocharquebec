@@ -1,0 +1,33 @@
+<%= form_for(@event) do |f| %>
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event.errors.count, t("common.error")) %></h2>
+
+      <ul>
+      <% @event.errors.each do |attribute, error_message| %>
+        <li><%= t("common.#{attribute}") + " #{error_message}" %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title, t("common.title") %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :date, t("common.date") %><br />
+    <%= f.text_field :date %> (<%= t("common.yyyymmdd") %>)
+  </div>
+  <div class="field">
+    <%= f.label :location, t("common.location") %><br />
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :description, t("common.description") %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

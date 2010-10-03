@@ -10,6 +10,10 @@ module NavigationHelpers
 
     when /the home\s?page/
       '/'
+    when /the new event_schedule page/
+      new_event_schedule_path
+    when /the new event page/
+      new_event_path
     when /the new user page/
       new_user_registration_path
     when /the videos page/
@@ -29,7 +33,7 @@ module NavigationHelpers
     when /the blog page/
       blog_posts_url
     when /the new invitation page/
-      new_admin_invitation_path
+      new_admin_invitation_path      
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

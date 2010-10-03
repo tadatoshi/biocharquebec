@@ -1,7 +1,7 @@
 Biocharquebec::Application.routes.draw do
   resources :events do
     scope :module => "events" do
-      resources :event_sessions
+      resources :event_sessions, :path => "sessions", :as => "sessions"
     end
   end
 

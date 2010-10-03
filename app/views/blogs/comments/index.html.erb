@@ -7,7 +7,7 @@
   <div>
     <h3><%= @blog_post.title %></h3>
     <h4><%= @blog_post.user_name %></h4>
-    <p><%= @blog_post.content %></p>
+    <p><%= simple_format @blog_post.content %></p>
   </div>  
   
   <div id="content-sub-list">
@@ -15,20 +15,20 @@
     <% @comments.each do |comment| %>
       <div>
         <h5><%= comment.user_name %></h5>
-        <p><%= comment.content %></p>
+        <p><%= simple_format comment.content %></p>
       </div>
     <% end %>
   </div>
-
-  <% if user_signed_in? %>
-    <div id="content-sub-list">
-      <p>
+  
+  <div id="content-sub-list">
+    <p>
+      <% if user_signed_in? %>
         <h5><%= t("blog.add_a_comment") %></h5>
         <%= render 'form' %>
-      </p>
-    </div>
-  <% else %>
-    <%= link_to t("common.sign_in"), new_user_session_url %>
-  <% end %>
+      <% else %>
+        <%= link_to t("blog.add_a_comment"), new_user_session_url %>
+      <% end %>
+    </p>
+  </div>
 
 </div>

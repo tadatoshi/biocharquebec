@@ -17,6 +17,10 @@ en:
     french: "French"
     title: "Title"
     content: "Content"
+    description: "Description"
+    date: "Date"
+    yyyymmdd: "yyyy-mm-dd"
+    location: "Location"
     file: "file"
     add: "Add"
     back: "Back"
@@ -24,7 +28,9 @@ en:
     show: "Show"
     destroy: "Destroy"
     was_successfully_created: "was successfully created"
+    was_successfully_added: "was successfully added"
     was_successfully_updated: "was successfully updated"
+    error: "error"    
 
   header:
     title_message: "Biochar Quebec is a group of people who are interested in biochar."
@@ -40,6 +46,13 @@ en:
   # TODO: Move the following sections to different file after figuring out loading the file. 
   #       The way described in http://guides.rails.info/i18n.html#optional-custom-i18n-configuration-setup doesn't work. 
   #########################################################################################################################
+  
+  # For submit button, etc.
+  helpers:
+    submit:
+      event:
+        create: "Add Event"
+
   user:
     edit_profile: "Edit Profile"
   
@@ -71,3 +84,17 @@ en:
   search:
     search_result: "Search result"
     not_found: "Text that contains the given keyword is not found."
+    
+  event:
+    event: "Event"
+    event_schedule: "Event schedule"
+    program: "Program"    
+    add_a_new_event: "Add a new event"
+    event_session: "Event session"
+    add_a_session: "Add a session"
+    add_a_new_event_session: "Add a new event session"
+    start_time: "Start time"
+    end_time: "End time"
+    title: "Title"
+    presenter: "Presenter"
+    affiliation: "Affiliation"

@@ -2,6 +2,17 @@ require 'spec_helper'
 
 describe SearchContent do
   
+  # Cleaning is not done with Rspec 2.0.0.beta.22:
+  before(:each) do
+    Overview.delete_all
+    BlogPost.delete_all
+  end
+
+  after(:each) do
+    Overview.delete_all
+    BlogPost.delete_all
+  end  
+  
   context "Delegation" do
   
     it "should get title and content from the delegated model" do

@@ -2,10 +2,8 @@
   <div>
     <h3><%= @blog_post.title %></h3>
     <h4><%= @blog_post.user_name %></h4>
-    <p><%= @blog_post.content %></p>
+    <p><%= simple_format @blog_post.content %></p>
   </div>
 </div>
-
-
 
 <%= link_to t("common.back"), blog_posts_path %>

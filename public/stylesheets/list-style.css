@@ -1,3 +1,31 @@
 #middle #main #main-section p#main-link {
   text-align: right;
 }
+
+.event-detail {
+  text-align: center;
+}
+
+#event-title {
+  font-size: 120%;
+  font-weight: bold;
+}
+
+#event-program {
+  font-size: 110%;
+  font-weight: bold;
+  text-transform: uppercase;  
+}
+
+#event-sessions-container {
+  border: 2px solid #90ee90; 
+/*  background-color: #b0e0e6; */
+}
+
+ul.event-session {
+  border: 2px solid #90ee90;
+}
+
+  ul.event-session li.event-session-title {
+    border-left: 2px solid #90ee90;
+  }

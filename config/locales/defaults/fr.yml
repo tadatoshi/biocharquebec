@@ -150,14 +150,20 @@ fr:
     french: "Français"
     title: "Titre"
     content: "Contenu"
+    description: "Description"
+    date: "Date"
+    yyyymmdd: "aaaa-mm-jj"    
+    location: "Lieu"
     file: "Fichier"
     add: "Ajouter"  
     back: "Retourner"
     edit: "Modifier"
     show: "Montrer"
     destroy: "Détruire"
-    was_successfully_created: "a réussi d'être créé"
+    was_successfully_created: "a réussi d'être créé(e)"
+    was_successfully_added: "a réussi d'être ajouté(e)"
     was_successfully_updated: "a réussi d'être mise à jour"
+    error: "erreur"    
 
   header:
     title_message: "Biochar-Québec est un groupe de personnes intéressées à l’étude du biochar."
@@ -173,6 +179,14 @@ fr:
   # TODO: Move the following sections to different file after figuring out loading the file. 
   #       The way described in http://guides.rails.info/i18n.html#optional-custom-i18n-configuration-setup doesn't work. 
   #########################################################################################################################
+  
+  # For submit button, etc.
+  helpers:
+    submit:
+      event:
+        create: "Ajouter nouveau évènement"
+        update: "Mettre l'évènement à jour"
+  
   user:
     edit_profile: "Modifiez votre profil"  
   
@@ -204,3 +218,17 @@ fr:
   search:
     search_result: "Résultat de recherche"
     not_found: "Texte qui contient les mots clé n'est pas trouvé." 
+    
+  event:
+    event: "Évènement"
+    event_schedule: "Horaire"  
+    program: "Ordre du jour"  
+    add_a_new_event: "Ajouter un nouveau évènement" 
+    event_session: "Séance de l'évènement"     
+    add_a_session: "Ajouter une séance"
+    add_a_new_event_session: "Ajouter une nouvelle séance"
+    start_time: "Heure de debut"
+    end_time: "Heure de fin"
+    title: "Titre"
+    presenter: "Conférencier"
+    affiliation: "Affiliation"

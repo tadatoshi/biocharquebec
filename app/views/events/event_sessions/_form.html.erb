@@ -1,0 +1,37 @@
+<%= form_for(@event_session, :url => url) do |f| %>
+  <% if @event_session.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event_session.errors.count, t("common.error")) %></h2>
+
+      <ul>
+      <% @event_session.errors.each do |attribute, error_message| %>
+        <li><%= t("event.#{attribute}") + " #{error_message}" %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :start_time, t("event.start_time") %><br />
+    <%= f.text_field :start_time %>
+  </div>
+  <div class="field">
+    <%= f.label :end_time, t("event.end_time") %><br />
+    <%= f.text_field :end_time %>
+  </div>
+  <div class="field">
+    <%= f.label :title, t("event.title") %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :presenter, t("event.presenter") %><br />
+    <%= f.text_field :presenter %>
+  </div>
+  <div class="field">
+    <%= f.label :affiliation, t("event.affiliation") %><br />
+    <%= f.text_field :affiliation %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
