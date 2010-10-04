@@ -6,5 +6,7 @@ class Events::EventSession
   field :presenter, :type => String
   field :affiliation, :type => String
   
-  embedded_in :event, :inverse_of => :sessions  
+  embedded_in :event, :inverse_of => :sessions
+  references_one :video
+  references_one :reference_file
 end

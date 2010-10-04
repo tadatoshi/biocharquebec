@@ -8,4 +8,6 @@ class ReferenceFile
   index :title
 
   mount_uploader :file, FileUploader
+  
+  referenced_in :event_session, :class_name => "Events::EventSession"  
 end

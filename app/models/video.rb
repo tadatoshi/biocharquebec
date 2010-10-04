@@ -6,4 +6,6 @@ class Video
   field :title
 
   index :title
+  
+  referenced_in :event_session, :class_name => "Events::EventSession"
 end

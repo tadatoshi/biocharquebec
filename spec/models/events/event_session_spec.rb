@@ -32,6 +32,40 @@ describe Events::EventSession do
       
     end
     
+    context "Association" do
+      
+      it "should be associated with a video" do
+        
+        event = Event.create!(:title => "Biochar conference")
+        event_session_1 = event.sessions.create!(:title => "Opening")
+        
+        video_1 = Video.create!(:thumbnail_file_path => "http://temp.ca/image.jpg", :video_file_path => "http://temp.ca/video", :title => "Temp video")
+        
+        event_session_1.video = video_1
+        event_session_1.save.should be_true
+        
+        event_session_1.video.should == video_1
+        video_1.event_session.should == event_session_1
+        
+      end
+      
+      it "should be associated with a reference_file" do
+        
+        event = Event.create!(:title => "Biochar conference")
+        event_session_1 = event.sessions.create!(:title => "Opening")
+        
+        reference_file_1 = ReferenceFile.create!(:title => "Temp file")
+        
+        event_session_1.reference_file = reference_file_1
+        event_session_1.save.should be_true
+        
+        event_session_1.reference_file.should == reference_file_1
+        reference_file_1.event_session.should == event_session_1
+        
+      end      
+      
+    end
+    
   end
     
 end
