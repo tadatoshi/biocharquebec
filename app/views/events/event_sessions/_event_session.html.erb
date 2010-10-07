@@ -1,14 +1,19 @@
 <ul class="event-session">
   <li class="event-session-time">
-    <% unless event_session.start_time.blank? && event_session.end_time.blank? %>
-      <%= event_session.start_time.try(:strftime, "%H:%M") %>-<%= event_session.end_time.try(:strftime, "%H:%M") %>
+    <% unless event_session.start_time.blank? %>
+      <%= event_session.start_time.try(:strftime, "%H:%M") %>
+    <% end %>
+    <% unless event_session.end_time.blank? %>
+      - <%= event_session.end_time.try(:strftime, "%H:%M") %>
     <% end %>
   </li>
   <li class="event-session-title"><%= event_session.title %></li>
   <% unless event_session.presenter.blank? %>
     <ul class="event-session-subsection">
       <li class="event-session-presenter"><%= event_session.presenter %></li>
-      <li class="event-session-affiliation">(<%= event_session.affiliation %>)</li>
+      <% unless event_session.affiliation.blank? %>
+        <li class="event-session-affiliation">(<%= event_session.affiliation %>)</li>
+      <% end %>
     </ul>
     <li class="event-session-link"><%= render :partial => "events/event_sessions/event_session_video_link", :locals => { :event => event, :event_session => event_session } %></li>
     <li class="event-session-link"><%= render :partial => "events/event_sessions/event_session_reference_file_link", :locals => { :event => event, :event_session => event_session } %></li>
