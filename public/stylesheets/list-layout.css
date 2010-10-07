@@ -37,6 +37,9 @@ ul.event-session {
     padding: 4px;
     float: left;
   }
+  ul.event-session li.event-session-time {
+    width: 10%; 
+  }
   ul.event-session li.event-session-title {
     width: 35%; 
   }
