@@ -27,9 +27,9 @@ ul.event-session {
 }
   ul.event-session li.event-session-title {
     border-left: 2px solid #90ee90;
+    border-right: 2px solid #90ee90;
   }
   ul.event-session ul.event-session-subsection {
-    border-left: 2px solid #90ee90;
     border-right: 2px solid #90ee90;
   }
     ul.event-session ul.event-session-subsection li.event-session-presenter {
