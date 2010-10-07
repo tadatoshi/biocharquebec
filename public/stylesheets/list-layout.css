@@ -38,11 +38,20 @@ ul.event-session {
     float: left;
   }
   ul.event-session li.event-session-title {
-    width: 35%;	
+    width: 35%; 
   }
-  ul.event-session li.event-session-link {
+  ul.event-session ul.event-session-subsection {
+    width: 30%;
+    list-style-type: none;
+    padding: 4px;
+    float: left;
+  }
+    ul.event-session ul.event-session-subsection li {
+      padding: 0px;
+    }
+/*  ul.event-session li.event-session-link {
     float: right;
-  }
+  }*/
   .end-event-session {
     clear: both;
   }

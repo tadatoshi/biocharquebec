@@ -1,21 +1,21 @@
-<h2 class="title"><%= t("event.event") %></h2>
-
 <% if admin_signed_in? %>
   <p id="main-link"><%= link_to t("event.add_a_new_event"), new_event_path %></p>
 <% end %>
+
+<h5><%= t("common.click_on_title_to_view_detail") %></h5>
 
 <div id="content-list">
   
   <% @events.each do |event| %>
   <div>
     <h3><%= link_to event.title, "#", :class => "content-title", "data-content-id" => event.id %></h3>
+    <h4><%=l event.date %></h4>
     <div class="content-detail" data-content-id=<%= event.id %>>
-      <h4><%=l event.date %></h4>
       <h4><%= event.location %></h4>
       <p><%= event.description %></p>
-	  <% if admin_signed_in? %>
-	    <p><%= link_to t("common.edit"), edit_event_path(event) %></p>
-	  <% end %>
+      <% if admin_signed_in? %>
+        <p><%= link_to t("common.edit"), edit_event_path(event) %></p>
+      <% end %>
       <p><%= link_to t("event.event_schedule"), event %></p>
     </div>
   </div>

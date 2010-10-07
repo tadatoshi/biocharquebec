@@ -1,5 +1,5 @@
 <h1><%= t("event.add_a_new_event_session") %></h1>
 
-<%= render :partial => 'form', :locals => { :url => event_sessions_path(@event) } %>
+<%= render :partial => 'form', :locals => { :url => event_sessions_path(@event), :add_video => false, :add_reference_file => false } %>
 
 <%= link_to t("common.back"), event_path(@event) %>

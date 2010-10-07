@@ -35,7 +35,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.update_attributes(params[:event])
-        format.html { redirect_to(@event, :notice => "#{t('event.event')} #{t('event.was_successfully_updated')}") }
+        format.html { redirect_to(@event, :notice => "#{t('event.event')} #{t('common.was_successfully_updated')}") }
       else
         format.html { render :action => "edit" }
       end

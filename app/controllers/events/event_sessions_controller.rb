@@ -9,6 +9,14 @@ class Events::EventSessionsController < ApplicationController
 
   def edit
     @event_session = @event.sessions.find(params[:id])
+    unless params[:add_video].blank?
+      @add_video = params[:add_video]
+      @videos = Video.all
+    end
+    unless params[:add_reference_file].blank?
+      @add_reference_file = params[:add_reference_file]
+      @reference_files = ReferenceFile.all
+    end
   end
 
   def create
@@ -16,7 +24,7 @@ class Events::EventSessionsController < ApplicationController
 
     respond_to do |format|
       if @event_session.save
-        format.html { redirect_to(event_url(@event), :notice => 'Event session was successfully created.') }
+        format.html { redirect_to(event_url(@event), :notice => "#{t('event.event_session')} #{t('common.was_successfully_added')}") }
       else
         format.html { render "new" }
       end
@@ -27,8 +35,13 @@ class Events::EventSessionsController < ApplicationController
     @event_session = @event.sessions.find(params[:id])
 
     respond_to do |format|
+      # if !params[:events_event_session]["video_id"].blank? && assign_video(@event, @event_session, params[:events_event_session]["video_id"])
+      #   format.html { redirect_to(event_url(@event), :notice => 'Event session was successfully updated.') }
+      # elsif !params[:events_event_session]["reference_file_id"].blank? && assgin_reference_file(@event, @event_session, params[:events_event_session]["reference_file_id"])
+      #   format.html { redirect_to(event_url(@event), :notice => 'Event session was successfully updated.') }
+      # elsif @event_session.update_attributes(params[:events_event_session])
       if @event_session.update_attributes(params[:events_event_session])
-        format.html { redirect_to(event_url(@event), :notice => 'Event session was successfully updated.') }
+        format.html { redirect_to(event_url(@event), :notice => "#{t('event.event_session')} #{t('common.was_successfully_updated')}") }
       else
         format.html { render :action => "edit" }
       end
@@ -48,4 +61,15 @@ class Events::EventSessionsController < ApplicationController
     def get_event
       @event = Event.find(params[:event_id])
     end  
+    
+    # def assign_video(event, event_session, video_id)
+    #   event_session.video = Video.find(video_id)
+    #   event.save
+    # end
+    # 
+    # def assgin_reference_file(event, event_session, reference_file_id)
+    #   event_session.reference_file = ReferenceFile.find(reference_file_id)
+    #   event.save
+    # end
+
 end

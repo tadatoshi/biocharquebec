@@ -11,26 +11,38 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :start_time, t("event.start_time") %><br />
-    <%= f.text_field :start_time %>
-  </div>
-  <div class="field">
-    <%= f.label :end_time, t("event.end_time") %><br />
-    <%= f.text_field :end_time %>
-  </div>
-  <div class="field">
-    <%= f.label :title, t("event.title") %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :presenter, t("event.presenter") %><br />
-    <%= f.text_field :presenter %>
-  </div>
-  <div class="field">
-    <%= f.label :affiliation, t("event.affiliation") %><br />
-    <%= f.text_field :affiliation %>
-  </div>
+  <% if add_video %>
+    <% @videos.each do |video| %>
+      <%= f.radio_button :video_id, video.id %>
+      <%= f.label :video_id, video.title, :value => video.id %>
+    <% end %>
+  <% elsif add_reference_file %>
+    <% @reference_files.each do |reference_file| %>
+      <%= f.radio_button :reference_file_id, reference_file.id %>
+      <%= f.label :reference_file_id, reference_file.title, :value => reference_file.id %>
+    <% end %>
+  <% else %>
+    <div class="field">
+      <%= f.label :start_time, t("event.start_time") %><br />
+      <%= f.text_field :start_time %>
+    </div>
+    <div class="field">
+      <%= f.label :end_time, t("event.end_time") %><br />
+      <%= f.text_field :end_time %>
+    </div>
+    <div class="field">
+      <%= f.label :title, t("event.title") %><br />
+      <%= f.text_field :title %>
+    </div>
+    <div class="field">
+      <%= f.label :presenter, t("event.presenter") %><br />
+      <%= f.text_field :presenter %>
+    </div>
+    <div class="field">
+      <%= f.label :affiliation, t("event.affiliation") %><br />
+      <%= f.text_field :affiliation %>
+    </div>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>

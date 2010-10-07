@@ -1,5 +1,7 @@
 Given /^the following videos:$/ do |videos|
-  Video.create!(videos.hashes)
+  videos.hashes.each do |video_params|
+    Video.create!(video_params)
+  end
 end
 
 When /^I delete the (\d+)(?:st|nd|rd|th) video$/ do |pos|

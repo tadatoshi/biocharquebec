@@ -1,0 +1,9 @@
+<% if event_session.reference_file.blank? %>
+  <% if admin_signed_in? %>
+    <%= link_to t("reference_file.presentation"), edit_event_session_path(event, event_session, :add_reference_file => true) %>
+  <% else %>
+    <%= t("reference_file.presentation") %>
+  <% end %>
+<% else %>
+  <%= link_to t("reference_file.presentation"), event_session.reference_file.file.url %>
+<% end %>

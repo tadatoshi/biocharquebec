@@ -31,6 +31,7 @@ en:
     was_successfully_added: "was successfully added"
     was_successfully_updated: "was successfully updated"
     error: "error"    
+    click_on_title_to_view_detail: "Click on the title to view the detail"
 
   header:
     title_message: "Biochar Quebec is a group of people who are interested in biochar."
@@ -79,12 +80,13 @@ en:
   reference_file:
     reference: "Reference"
     publications: "Publications"
+    presentation: "Presentation"
     add_file: "Add a file"
     
   search:
     search_result: "Search result"
     not_found: "Text that contains the given keyword is not found."
-    
+
   event:
     event: "Event"
     event_schedule: "Event schedule"

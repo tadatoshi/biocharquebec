@@ -59,12 +59,12 @@ td {
   margin-right: auto;
 }
   #middle #main {
-    min-height: 540px;
+    min-height: 640px;
     width: 694px;
     float: left;
   }
   #middle #sidebar {
-    min-height: 540px;
+    min-height: 640px;
     width: 306px;
     float: left;
   }

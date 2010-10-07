@@ -25,7 +25,7 @@
 <% end %>
 
 <div id="event-sessions-container">
-  <%= render :partial => "events/event_sessions/event_session", :collection => @event.sessions %>
+  <%= render :partial => "events/event_sessions/event_session", :collection => @event.sessions, :locals => { :event => @event } %>
 </div>
 
 

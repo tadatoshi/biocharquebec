@@ -1,8 +1,8 @@
-<h2 class="title"><%= t("blog.blog") %></h2>
-
 <% if user_signed_in? %>
   <p id="main-link"><%= link_to t("blog.add_a_new_blog_post"), new_blog_post_path %></p>
 <% end %>
+
+<h5><%= t("common.click_on_title_to_view_detail") %></h5>
 
 <div id="content-list">
   

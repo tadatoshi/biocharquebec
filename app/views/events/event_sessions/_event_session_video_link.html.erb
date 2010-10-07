@@ -1,0 +1,9 @@
+<% if event_session.video.blank? %>
+  <% if admin_signed_in? %>
+    <%= link_to t("video.video"), edit_event_session_path(event, event_session, :add_video => true) %>
+  <% else %>
+    <%= t("video.video") %>
+  <% end %>
+<% else %>
+  <%= link_to t("video.video"), event_session.video.video_file_path, :title => event_session.video.title, :class => "video-color-box" %>
+<% end %>

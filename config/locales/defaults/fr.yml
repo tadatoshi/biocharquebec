@@ -163,7 +163,8 @@ fr:
     was_successfully_created: "a réussi d'être créé(e)"
     was_successfully_added: "a réussi d'être ajouté(e)"
     was_successfully_updated: "a réussi d'être mise à jour"
-    error: "erreur"    
+    error: "erreur" 
+    click_on_title_to_view_detail: "Cliquer sur un titre pour regarder le détail"       
 
   header:
     title_message: "Biochar-Québec est un groupe de personnes intéressées à l’étude du biochar."
@@ -213,6 +214,7 @@ fr:
   reference_file:
     reference: "Référence"
     publications: "Publications"
+    presentation: "Présentation"    
     add_file: "Ajouter un fichier"
 
   search:

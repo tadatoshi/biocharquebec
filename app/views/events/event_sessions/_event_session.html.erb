@@ -1,10 +1,14 @@
 <ul class="event-session">
   <li class="event-session-time"><%= event_session.start_time.strftime("%H:%M") %>-<%= event_session.end_time.strftime("%H:%M") %></li>
   <li class="event-session-title"><%= event_session.title %></li>
-  <li class="event-session-presenter"><%= event_session.presenter %></li>
-  <li class="event-session-affiliation">(<%= event_session.affiliation %>)</li>
+  <ul class="event-session-subsection">
+    <li class="event-session-presenter"><%= event_session.presenter %></li>
+    <li class="event-session-affiliation">(<%= event_session.affiliation %>)</li>
+  </ul>
+  <li class="event-session-link"><%= render :partial => "events/event_sessions/event_session_video_link", :locals => { :event => event, :event_session => event_session } %></li>
+  <li class="event-session-link"><%= render :partial => "events/event_sessions/event_session_reference_file_link", :locals => { :event => event, :event_session => event_session } %></li>
   <% if admin_signed_in? %>
-    <li class="event-session-link"><%= link_to t("common.edit"), edit_event_session_path(event_session) %></li>
+    <li class="event-session-link"><%= link_to t("common.edit"), edit_event_session_path(event, event_session) %></li>
   <% end %>
 </ul>
 <div class="end-event-session"></div> <!-- For clearing CSS float -->

@@ -6,6 +6,8 @@ Feature: Manage event_schedules
   Before do
     Admin.delete_all
     Event.delete_all
+    Video.delete_all
+    ReferenceFile.delete_all
     DatabaseCleaner.start
   end
 
@@ -13,6 +15,8 @@ Feature: Manage event_schedules
     DatabaseCleaner.clean
     Admin.delete_all
     Event.delete_all
+    Video.delete_all
+    ReferenceFile.delete_all
   end
 
   Scenario: Register new event
@@ -39,8 +43,29 @@ Feature: Manage event_schedules
     Then I should see "Conference for biochar"
     And I should see "The research and applications updates in Biochar in Canada"
     And I should see "2010-09-02"
+    And I should see "Centre communautaire, rue du Parc, St-François-Xavier-de-Brompton, Quebec" 
+    And I should see "09:00-09:20"
+    And I should see "Julie Major, PhD"
+    And I should see "International Biochar Initiative"
+    And I should see "Introduction of the science and technology of biochar"
+    And I should see "Video"
+    And I should see "Presentation"
+    Given the following videos:
+      | title        | thumbnail_file_path             | video_file_path                  |
+      | Test video 1 | http://temp.ca/test_video_1.jpg | http://temp.ca/test_video_1.mpeg |
+      | Test video 2 | http://temp.ca/test_video_2.jpg | http://temp.ca/test_video_2.mpeg |
+    When I follow "Video"
+    Then I should see "Test video 1"
+    And I should see "Test video 2"
+    When I choose "Test video 1"
+    And I press "Update Event session"
+    Then I should see "Conference for biochar"
+    And I should see "The research and applications updates in Biochar in Canada"
+    And I should see "2010-09-02"
     And I should see "Centre communautaire, rue du Parc, St-François-Xavier-de-Brompton, Quebec"  
     And I should see "09:00-09:20"
     And I should see "Julie Major, PhD"
     And I should see "International Biochar Initiative"
     And I should see "Introduction of the science and technology of biochar"
+    And I should see "Video"
+    And I should see "Presentation"
