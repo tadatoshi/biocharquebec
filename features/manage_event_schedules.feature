@@ -32,7 +32,7 @@ Feature: Manage event_schedules
     And I should see "2010-09-02"
     And I should see "Centre communautaire, rue du Parc, St-François-Xavier-de-Brompton, Quebec" 
     And I should see "The research and applications updates in Biochar in Canada" 
-    When I follow "Event schedule"
+    When I follow "Schedule"
     And I follow "Add a session"
     And I fill in "9:00" for "Start time"
     And I fill in "9:20" for "End time"

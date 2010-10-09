@@ -223,8 +223,7 @@ fr:
     
   event:
     event: "Évènement"
-    event_schedule: "Horaire"  
-    program: "Ordre du jour"  
+    schedule: "Ordre du jour"
     add_a_new_event: "Ajouter un nouveau évènement" 
     event_session: "Séance de l'évènement"     
     add_a_session: "Ajouter une séance"

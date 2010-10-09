@@ -89,8 +89,7 @@ en:
 
   event:
     event: "Event"
-    event_schedule: "Event schedule"
-    program: "Program"    
+    schedule: "Schedule"   
     add_a_new_event: "Add a new event"
     event_session: "Event session"
     add_a_session: "Add a session"
