@@ -53,18 +53,18 @@ td {
 
 #middle {
   clear: both;
-  min-height: 480px;
+  min-height: 720px;
   width: 1000px;
   margin-left: auto;
   margin-right: auto;
 }
   #middle #main {
-    min-height: 640px;
+    min-height: 720px;
     width: 694px;
     float: left;
   }
   #middle #sidebar {
-    min-height: 640px;
+    min-height: 720px;
     width: 306px;
     float: left;
   }
