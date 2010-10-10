@@ -9,14 +9,18 @@ body {
   background-color: #faaf0f;
 }
 #middle {
-  background-color: #ffdd7f;
+  background-color: #5b0101;
 }
+  #middle #main {
+    -moz-border-radius: 0 1em 1em 1em;
+    border-radius: 0 1em 1em 1em; 
+    background-color: #fff8e4;
+  }
   #middle #sidebar {
+    -moz-border-radius: 1em;
+    border-radius: 1em;
     background-color: #00843b; 
   }
-#main {
-  background-color: #fff8e4;
-}
 #footer {
   text-align: center;
 }
@@ -48,6 +52,8 @@ a:hover {
   font-size: 14px;
 }
 #header #tab ul li {
+  -moz-border-radius: 0.7em 0.7em 0 0;
+  border-radius: 0.7em 0.7em 0 0;   
   background-color: #00843b;
   border-right: 1px solid #5b0101;
   font-weight: bold;
