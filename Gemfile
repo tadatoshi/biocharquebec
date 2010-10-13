@@ -35,7 +35,7 @@ end
 
 group :test do
   gem "rspec"
-  gem "rspec-rails", ">=2.0.0.a5"
+  gem "rspec-rails"
   gem "mongoid-rspec"
 end
 group :cucumber do
