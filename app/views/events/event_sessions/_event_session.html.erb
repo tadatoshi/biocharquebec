@@ -8,16 +8,16 @@
     <% end %>
   </li>
   <li class="event-session-title"><%= event_session.title %></li>
-  <% unless event_session.presenter.blank? %>
-    <ul class="event-session-subsection">
+  <ul class="event-session-subsection">
+    <% unless event_session.presenter.blank? %>
       <li class="event-session-presenter"><%= event_session.presenter %></li>
       <% unless event_session.affiliation.blank? %>
         <li class="event-session-affiliation">(<%= event_session.affiliation %>)</li>
       <% end %>
-    </ul>
-    <li class="event-session-link"><%= render :partial => "events/event_sessions/event_session_video_link", :locals => { :event => event, :event_session => event_session } %></li>
-    <li class="event-session-link"><%= render :partial => "events/event_sessions/event_session_reference_file_link", :locals => { :event => event, :event_session => event_session } %></li>
-  <% end %>
+    <% end %>
+  </ul>
+  <li class="event-session-link"><%= render :partial => "events/event_sessions/event_session_video_link", :locals => { :event => event, :event_session => event_session } %></li>
+  <li class="event-session-link"><%= render :partial => "events/event_sessions/event_session_reference_file_link", :locals => { :event => event, :event_session => event_session } %></li>
   <% if admin_signed_in? %>
     <li class="event-session-link"><%= link_to t("common.edit"), edit_event_session_path(event, event_session) %></li>
   <% end %>
