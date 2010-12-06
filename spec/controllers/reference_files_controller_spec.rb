@@ -13,7 +13,7 @@ describe ReferenceFilesController do
 
   describe "GET index" do
     it "assigns all reference_files as @reference_files" do
-      ReferenceFile.stub(:all) { [mock_reference_file] }
+      ReferenceFile.stub(:ordered) { [mock_reference_file] }
       get :index
       assigns(:reference_files).should eq([mock_reference_file])
     end

@@ -23,9 +23,10 @@ describe Blogs::CommentsController do
     it "assigns all comments as @comments" do
       BlogPost.stub(:find).with("28") { mock_blog_post }
       # mock_blog_post.stub_chain(:comments, :all).with(:locale => "en").and_return([mock_comment])
-      mock_comments = mock(Array)
-      mock_blog_post.should_receive(:comments).and_return(mock_comments)
-      mock_comments.should_receive(:all).with({:conditions=>{:locale=>"en"}}).and_return([mock_comment])
+      mock_blog_post.stub_chain(:comments, :in_current_locale, :ordered) { [mock_comment] }
+      # mock_comments = mock(Array)
+      # mock_blog_post.should_receive(:comments).and_return(mock_comments)
+      # mock_comments.should_receive(:all).with({:conditions=>{:locale=>"en"}}).and_return([mock_comment])
       mock_new_comment = mock_model(Blogs::Comment).as_null_object
       mock_blog_post.stub_chain(:comments, :build).and_return(mock_new_comment)
       get :index, :blog_post_id => "28"

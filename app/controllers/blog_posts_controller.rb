@@ -2,7 +2,7 @@ class BlogPostsController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index] 
 
   def index
-    @blog_posts = BlogPost.all(:conditions => { :locale => I18n.locale.to_s })
+    @blog_posts = BlogPost.in_current_locale.ordered
   end
 
   def show

@@ -13,7 +13,7 @@ describe BlogPostsController do
 
   describe "GET index" do
     it "assigns all blog_posts as @blog_posts" do
-      BlogPost.should_receive(:all).with({:conditions=>{:locale=>"en"}}).and_return([mock_blog_post])
+      BlogPost.stub_chain(:in_current_locale, :ordered) { [mock_blog_post] }
       get :index
       assigns(:blog_posts).should eq([mock_blog_post])
     end

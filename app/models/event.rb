@@ -11,7 +11,10 @@ class Event
   validates :title, :presence => true
   validates :locale, :presence => true  
   
-  embeds_many :sessions, :class_name => "Events::EventSession"   
+  embeds_many :sessions, :class_name => "Events::EventSession" 
+  
+  scope :ordered, desc(:_id)  
+  scope :in_current_locale, lambda { where(:locale => I18n.locale.to_s) }    
   
   private
     def assign_current_locale

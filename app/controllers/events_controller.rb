@@ -3,7 +3,7 @@ class EventsController < ApplicationController
   before_filter :authenticate_admin!, :except => [:show, :index]  
   
   def index
-    @events = Event.all(:conditions => { :locale => I18n.locale.to_s })
+    @events = Event.in_current_locale.ordered
   end
 
   def show

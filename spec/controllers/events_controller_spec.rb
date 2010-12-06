@@ -17,9 +17,9 @@ describe EventsController do
 
   describe "GET index" do
     it "assigns all events as @events" do
-      Event.stub(:all).with(:conditions => { :locale => "en" }) { [mock_event] }
+      Event.stub_chain(:in_current_locale, :ordered) { [mock_event] }
       get :index
-      # assigns(:events).should eq([mock_event])
+      assigns(:events).should eq([mock_event])
     end
   end
 

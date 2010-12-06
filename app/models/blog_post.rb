@@ -16,7 +16,8 @@ class BlogPost
   validates :locale, :presence => true  
 
   embeds_many :comments, :class_name => "Blogs::Comment"
-  
+
+  scope :ordered, desc(:_id)  
   scope :in_current_locale, lambda { where(:locale => I18n.locale.to_s) }
   # scope :search_a_field, lambda { |field, keyword| where_like(field, keyword) }
   scope :search, :where => { :title => "Some title 1" }

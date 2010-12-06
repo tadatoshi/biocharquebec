@@ -9,5 +9,8 @@ class ReferenceFile
 
   mount_uploader :file, FileUploader
   
-  referenced_in :event_session, :class_name => "Events::EventSession"  
+  referenced_in :event_session, :class_name => "Events::EventSession"
+  
+  scope :ordered, asc(:_id)
+      
 end

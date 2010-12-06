@@ -49,6 +49,34 @@ describe Event do
       
     end
     
+    context "Scope" do
+      
+      before(:each) do
+        I18n.locale = "en"
+      end      
+      
+      after(:each) do
+        I18n.locale = "en"
+      end      
+
+      it "should have the current locale and be ordered by id" do     
+
+        event_1 = Event.create(:title => "Some title", :locale => "en")
+        event_2 = Event.create(:title => "Some title", :locale => "fr")
+        event_3 = Event.create(:title => "Some title", :locale => "fr")
+        event_4 = Event.create(:title => "Some title", :locale => "en")
+        event_5 = Event.create(:title => "Some title", :locale => "en")
+        event_6 = Event.create(:title => "Some title", :locale => "fr")
+
+        I18n.locale = "en"
+        Event.in_current_locale.ordered.map { |event| event }.should == [event_5, event_4, event_1]
+        I18n.locale = "fr"
+        Event.in_current_locale.ordered.map { |event| event }.should == [event_6, event_3, event_2]      
+
+      end
+
+    end    
+    
   end
 
 end

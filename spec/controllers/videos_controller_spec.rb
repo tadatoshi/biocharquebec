@@ -13,7 +13,7 @@ describe VideosController do
 
   describe "GET index" do
     it "assigns all videos as @videos" do
-      Video.stub(:all) { [mock_video] }
+      Video.stub(:ordered) { [mock_video] }
       get :index
       assigns(:videos).should eq([mock_video])
     end

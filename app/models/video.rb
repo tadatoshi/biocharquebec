@@ -16,6 +16,8 @@ class Video
   #   Events::EventSession.first(:conditions => { :video_id => self.id })
   # end
   
+  scope :ordered, asc(:_id)  
+  
   # TODO: Find a way to save event_session when this Video is saved:
   # def event_session(event_session)
   #   event_session.video_id = self.id

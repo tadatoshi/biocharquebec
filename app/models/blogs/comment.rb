@@ -14,6 +14,9 @@ class Blogs::Comment
   validates :locale, :presence => true  
   
   embedded_in :blog_post, :inverse_of => :comments
+  
+  scope :ordered, asc(:_id)
+  scope :in_current_locale, lambda { where(:locale => I18n.locale.to_s) }  
 
   def user_name
     begin

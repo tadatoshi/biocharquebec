@@ -4,7 +4,7 @@ class ReferenceFilesController < ApplicationController
   # GET /reference_files
   # GET /reference_files.xml
   def index
-    @reference_files = ReferenceFile.all
+    @reference_files = ReferenceFile.ordered
 
     respond_to do |format|
       format.html # index.html.erb

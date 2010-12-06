@@ -19,6 +19,30 @@ describe ReferenceFile do
       reference_file.title.should == "Temp file"
 
     end
+    
+    context "Scope" do
+      
+      before(:each) do
+        I18n.locale = "en"
+      end      
+      
+      after(:each) do
+        I18n.locale = "en"
+      end      
+
+      it "should have the current locale and be ordered by id" do     
+
+        reference_file_1 = ReferenceFile.create!(:title => "Temp file")
+        reference_file_2 = ReferenceFile.create!(:title => "Temp file")
+        reference_file_3 = ReferenceFile.create!(:title => "Temp file")
+        reference_file_4 = ReferenceFile.create!(:title => "Temp file")
+        reference_file_5 = ReferenceFile.create!(:title => "Temp file")
+
+        ReferenceFile.ordered.map { |reference_file| reference_file }.should == [reference_file_1, reference_file_2, reference_file_3, reference_file_4, reference_file_5]
+
+      end
+
+    end    
 
   end
 
