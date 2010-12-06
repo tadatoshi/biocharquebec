@@ -5,7 +5,7 @@ class Overview < ActiveRecord::Base
   
   before_validation :assign_current_locale
   
-  scope :in_current_locale, where(:locale => I18n.locale.to_s)
+  scope :in_current_locale, lambda { where(:locale => I18n.locale.to_s) }
   scope :search_a_field, lambda { |field, keyword| where_like(field, keyword) }
   
   def self.search(keyword)
