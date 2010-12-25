@@ -50,12 +50,9 @@ describe SearchContent do
       blog_post_2 = BlogPost.create(:title => "Blog post 2", :content => "This is some another content.", :locale => "en")
       
       # TODO: Make BlogPost search work.
-      search_contents = SearchContent.search_in_current_locale("temp")
+      search_contents = SearchContent.search("temp")
       
-      search_contents.size.should == 1
-      pending "Search with blog post" do
-        search_contents.should have(2).items
-      end
+      search_contents.should have(2).items
       
       search_contents.first.should be_instance_of(SearchContent)
       search_contents.first.title.should == "Overview 1"
@@ -63,7 +60,6 @@ describe SearchContent do
       search_contents.first.locale.should == "en"
       search_contents.first.model_class.should == Overview
       
-      pending "Search can be made with Mongoid models"
       search_contents.second.title.should == "Blog post 1"
       search_contents.second.content.should == "This is some temp content."
       search_contents.second.locale.should == "en"

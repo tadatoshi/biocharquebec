@@ -131,6 +131,12 @@ describe BlogPost do
         # end
       
       end
+      
+      it "should find blog_post with a keyword using custom matcher" do
+        
+        BlogPost.should search_by(:title, :content)
+        
+      end
     
     end    
     

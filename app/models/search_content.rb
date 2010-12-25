@@ -23,12 +23,19 @@ class SearchContent
   
   class << self
     
-    def search_in_current_locale(keyword)
+    def search(keyword)
       
-      overviews = Overview.search(keyword)
-      overviews.map do |overview|
+      results = []
+      
+      results += Overview.search(keyword).map do |overview|
         SearchContent.new(overview, :method_name_conversion => { :content => :description })
       end
+      
+      results += BlogPost.search(keyword).map do |blog_post|
+        SearchContent.new(blog_post)
+      end
+      
+      results
       
     end
     
