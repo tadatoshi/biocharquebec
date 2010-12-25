@@ -112,7 +112,6 @@ describe BlogPost do
         blog_post_french_1 = BlogPost.create!(:title => "Quelque titre 1", :locale => "fr")
         blog_post_english_2 = BlogPost.create!(:title => "Some title 2", :locale => "en")
       
-        pending "Resolve: The return value fractuates between actual data and the instance of Mongoid Criteria"
         BlogPost.all.should == [blog_post_english_1, blog_post_french_1, blog_post_english_2]
         BlogPost.in_current_locale.should == [blog_post_english_1, blog_post_english_2]
       
@@ -124,14 +123,12 @@ describe BlogPost do
         blog_post_french_1 = BlogPost.create!(:title => "Quelque titre 1", :content => "C'est bon. temp", :locale => "fr")
         blog_post_english_2 = BlogPost.create!(:title => "Some title 2", :content => "This is another blog_post", :locale => "en")
         blog_post_english_3 = BlogPost.create!(:title => "Some temp title 3", :content => "This is yet another blog_post", :locale => "en")      
-      
-        pending "Resolve: The return value fractuates between actual data and the instance of Mongoid Criteria"
-        BlogPost.where(:locale => I18n.locale).should == [blog_post_english_1, blog_post_english_3]
-              
-        BlogPost.criteria.and(:title => "temp", :content => "temp").should == [blog_post_english_1, blog_post_english_3]
-      
-        BlogPost.search("temp").should == [blog_post_english_1, blog_post_english_3]
-        BlogPost.search.should == [blog_post_english_1, blog_post_english_3]
+        
+        execute_query_to_models(BlogPost.search("temp")).should == [blog_post_english_1, blog_post_english_3]
+
+        # pending "any_of doesn't seem to work" do      
+        #   execute_query_to_models(BlogPost.any_of({:title => /^temp/}, {:content => /^temp/})).should == [blog_post_english_1, blog_post_english_3]
+        # end
       
       end
     

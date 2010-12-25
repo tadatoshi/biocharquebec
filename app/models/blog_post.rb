@@ -19,8 +19,6 @@ class BlogPost
 
   scope :ordered, desc(:_id)  
   scope :in_current_locale, lambda { where(:locale => I18n.locale.to_s) }
-  # scope :search_a_field, lambda { |field, keyword| where_like(field, keyword) }
-  scope :search, :where => { :title => "Some title 1" }
 
   def user_name
     begin
@@ -36,14 +34,9 @@ class BlogPost
 
   class << self
 
-    # def search(keyword)
-    #   # where(:locale => I18n.locale.to_s).and(:title => RegExp.new(keyword), :content => RegExp.new(keyword))
-    #   # where(:title => RegExp.new(keyword))
-    #   # where(:title => /^temp/i)
-    #   where(:title => RegExp.new("temp"))
-    #   # where(:title => RegExp.new("Some title 1"))
-    #   # where(:title => "Some title 1")
-    # end
+    def search(keyword)
+      in_current_locale.where("this.title.match(/#{keyword}/i) || this.content.match(/#{keyword}/i)")
+    end
   
   end
 
