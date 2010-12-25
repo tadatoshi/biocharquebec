@@ -134,7 +134,7 @@ describe BlogPost do
       
       it "should find blog_post with a keyword using custom matcher" do
         
-        BlogPost.should search_by(:title, :content)
+        BlogPost.should search_by(:title, :content, :locale => I18n.locale.to_s)
         
       end
     
