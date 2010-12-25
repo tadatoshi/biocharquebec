@@ -88,9 +88,9 @@ describe BlogPost do
         blog_post_5 = BlogPost.create(:locale => "en", :title => "Fifth blog entry", :content => "This is the fifth entry")
 
         I18n.locale = "en"
-        BlogPost.in_current_locale.ordered.map { |blog_post| blog_post }.should == [blog_post_5, blog_post_3]
+        execute_query_to_models(BlogPost.in_current_locale.ordered).should == [blog_post_5, blog_post_3]
         I18n.locale = "fr"
-        BlogPost.in_current_locale.ordered.map { |blog_post| blog_post }.should == [blog_post_4, blog_post_2, blog_post_1]      
+        execute_query_to_models(BlogPost.in_current_locale.ordered).should == [blog_post_4, blog_post_2, blog_post_1]      
 
       end
 
@@ -112,27 +112,28 @@ describe BlogPost do
         blog_post_french_1 = BlogPost.create!(:title => "Quelque titre 1", :locale => "fr")
         blog_post_english_2 = BlogPost.create!(:title => "Some title 2", :locale => "en")
       
-        # TODO: The return value fractuates between actual data and the instance of Mongoid Criteria:
-        # BlogPost.all.should == [blog_post_english_1, blog_post_french_1, blog_post_english_2]
-        # BlogPost.in_current_locale.should == [blog_post_english_1, blog_post_english_2]
+        pending "Resolve: The return value fractuates between actual data and the instance of Mongoid Criteria"
+        BlogPost.all.should == [blog_post_english_1, blog_post_french_1, blog_post_english_2]
+        BlogPost.in_current_locale.should == [blog_post_english_1, blog_post_english_2]
       
       end
     
-      # it "should find blog_post with a keyword" do
-      # 
-      #   blog_post_english_1 = BlogPost.create!(:title => "Some title 1", :content => "This is a temp blog_post", :locale => "en")
-      #   blog_post_french_1 = BlogPost.create!(:title => "Quelque titre 1", :content => "C'est bon. temp", :locale => "fr")
-      #   blog_post_english_2 = BlogPost.create!(:title => "Some title 2", :content => "This is another blog_post", :locale => "en")
-      #   blog_post_english_3 = BlogPost.create!(:title => "Some temp title 3", :content => "This is yet another blog_post", :locale => "en")      
-      # 
-      #   # BlogPost.where(:locale => I18n.locale).should == [blog_post_english_1, blog_post_english_3]
-      #   #       
-      #   # BlogPost.criteria.and(:title => "temp", :content => "temp").should == [blog_post_english_1, blog_post_english_3]
-      # 
-      #   # BlogPost.search("temp").should == [blog_post_english_1, blog_post_english_3]
-      #   BlogPost.search.should == [blog_post_english_1, blog_post_english_3]
-      # 
-      # end
+      it "should find blog_post with a keyword" do
+      
+        blog_post_english_1 = BlogPost.create!(:title => "Some title 1", :content => "This is a temp blog_post", :locale => "en")
+        blog_post_french_1 = BlogPost.create!(:title => "Quelque titre 1", :content => "C'est bon. temp", :locale => "fr")
+        blog_post_english_2 = BlogPost.create!(:title => "Some title 2", :content => "This is another blog_post", :locale => "en")
+        blog_post_english_3 = BlogPost.create!(:title => "Some temp title 3", :content => "This is yet another blog_post", :locale => "en")      
+      
+        pending "Resolve: The return value fractuates between actual data and the instance of Mongoid Criteria"
+        BlogPost.where(:locale => I18n.locale).should == [blog_post_english_1, blog_post_english_3]
+              
+        BlogPost.criteria.and(:title => "temp", :content => "temp").should == [blog_post_english_1, blog_post_english_3]
+      
+        BlogPost.search("temp").should == [blog_post_english_1, blog_post_english_3]
+        BlogPost.search.should == [blog_post_english_1, blog_post_english_3]
+      
+      end
     
     end    
     
