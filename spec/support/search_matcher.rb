@@ -1,8 +1,16 @@
-
+# Asserts the search is made with the given fields with the option specifying if the result if filtered by locale.
+#
+# Options:
+#
+# args: List of field name symbols. 
+#       Last argument can be +Hash+ of options. 
+#         :locale - Specifies the locale on which the filtering the search result is based on.
+#
 # Example:
-#   BlogPost.should search_by(:title, :content, :locale => I18n.locale.to_s)
-def search_by(*fields)
-  SearchMatcher.new(*fields)
+#
+# <tt>BlogPost.should search_by(:title, :content, :locale => I18n.locale.to_s)</tt>
+def search_by(*args)
+  SearchMatcher.new(*args)
 end
 
 class SearchMatcher
@@ -13,11 +21,11 @@ class SearchMatcher
   FIELD_CONTENT_WITHOUT_KEYWORD = "Used for some data."
   LOCALES = ["en", "fr"]
 
-  def initialize(*fields)
-    if fields.try(:last).instance_of?(Hash)
-      @locale = fields.pop[:locale]
+  def initialize(*args)
+    if args.try(:last).instance_of?(Hash)
+      @locale = args.pop[:locale]
     end    
-    @fields = fields
+    @fields = args
   end
 
   def matches?(model_class)
