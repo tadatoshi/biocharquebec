@@ -11,17 +11,34 @@ require 'spec_helper'
 #   end
 # end
 describe SearchContentsHelper do
-  
+    
   before(:each) do
+    Overview.delete_all
+    BlogPost.delete_all
+    ReferenceFile.delete_all
+    Video.delete_all
+    
     I18n.locale = "en"
+  end
+
+  after(:each) do
+    Overview.delete_all
+    BlogPost.delete_all
+    ReferenceFile.delete_all
+    Video.delete_all
   end  
 
   describe "generate title path" do
     
     it "generates path for the given model" do
-      overview_1 = Overview.create!(:title => "Some title 1", :description => "This is a temp overview")
-      helper.title_path(overview_1).should == "/overviews/#{overview_1.id}"
+      overview = Overview.create!(:title => "Some title 1", :description => "This is a temp overview")
+      helper.title_path(overview).should == "/overviews/#{overview.id}"
     end
+    
+    it "generates path for the given model" do
+      video = Video.create!(:title => "Some title 1")
+      helper.title_path(video).should == "/videos?id=#{video.id}"
+    end    
     
   end
   

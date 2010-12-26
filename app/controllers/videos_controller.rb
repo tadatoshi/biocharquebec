@@ -3,7 +3,7 @@ class VideosController < ApplicationController
   respond_to :html
 
   def index
-    @videos = Video.ordered
+    @videos = params[:id] ? [Video.find(params[:id])] : Video.ordered
     respond_with(@videos)
   end
 

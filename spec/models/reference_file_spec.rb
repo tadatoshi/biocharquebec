@@ -42,7 +42,17 @@ describe ReferenceFile do
 
       end
 
-    end    
+    end 
+    
+    context "Search" do
+      
+      it "should find one with a keyword" do
+        
+        ReferenceFile.should search_by(:title)
+        
+      end
+      
+    end       
 
   end
 

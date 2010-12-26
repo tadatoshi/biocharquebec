@@ -22,4 +22,12 @@ class Video
   # def event_session(event_session)
   #   event_session.video_id = self.id
   # end
+  
+  class << self
+
+    def search(keyword)
+      where(:title => /#{keyword}/i)
+    end
+  
+  end  
 end

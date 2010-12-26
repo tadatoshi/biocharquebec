@@ -44,6 +44,16 @@ describe Video do
       end
 
     end    
+    
+    context "Search" do
+      
+      it "should find one with a keyword" do
+        
+        Video.should search_by(:title)
+        
+      end
+      
+    end    
 
   end
 

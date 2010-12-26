@@ -6,13 +6,17 @@ describe SearchContent do
   before(:each) do
     Overview.delete_all
     BlogPost.delete_all
+    ReferenceFile.delete_all
+    Video.delete_all
   end
 
   after(:each) do
     Overview.delete_all
     BlogPost.delete_all
+    ReferenceFile.delete_all
+    Video.delete_all
   end  
-  
+
   context "Delegation" do
   
     it "should get title and content from the delegated model" do
@@ -38,18 +42,28 @@ describe SearchContent do
       search_content.locale.should == "en"
     
     end
+    
+    it "should return nil when the delegated model doesn't have content field" do
+    
+      reference_file = ReferenceFile.create!(:title => "Temp title")
+    
+      search_content = SearchContent.new(reference_file)
+
+      search_content.title.should == "Temp title"
+      search_content.content.should be_nil
+    
+    end    
   
   end
-  
+
   describe "search" do
     
     it "should find search content based on the given query" do
-    
+          
       overview_1 = Overview.create!(:title => "Overview 1", :description => "This is a temp overview.", :locale => "en")
       blog_post_1 = BlogPost.create(:title => "Blog post 1", :content => "This is some temp content.", :locale => "en")
       blog_post_2 = BlogPost.create(:title => "Blog post 2", :content => "This is some another content.", :locale => "en")
       
-      # TODO: Make BlogPost search work.
       search_contents = SearchContent.search("temp")
       
       search_contents.should have(2).items

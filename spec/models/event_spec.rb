@@ -75,7 +75,17 @@ describe Event do
 
       end
 
-    end    
+    end  
+    
+    context "Search" do
+      
+      it "should find one with a keyword" do
+        
+        Event.should search_by(:title, :description, :locale => I18n.locale.to_s)
+        
+      end
+      
+    end  
     
   end
 
