@@ -2,7 +2,7 @@ class BlogPostsController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index] 
 
   def index
-    @blog_posts = BlogPost.in_current_locale.ordered
+    @blog_posts = params[:id] ? [BlogPost.find(params[:id])] : BlogPost.in_current_locale.ordered
   end
 
   def show

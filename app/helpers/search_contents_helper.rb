@@ -1,7 +1,7 @@
 module SearchContentsHelper
   
-  def title_path(model)    
-    if model.instance_of?(Video)
+  def title_path(model)
+    if model.instance_of?(BlogPost) || model.instance_of?(Video)
       self.send("#{model.class.name.pluralize.underscore}_path".to_sym, :id => model.id)
     else
       # Note: All the following three statements work the same way:

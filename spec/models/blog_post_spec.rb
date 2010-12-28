@@ -137,6 +137,12 @@ describe BlogPost do
         BlogPost.should search_by(:title, :content, :locale => I18n.locale.to_s)
         
       end
+      
+      it "should find blog_post with a keyword contained in specified embedded document using custom matcher" do
+        
+        BlogPost.should search_embedded_by(:comments, :content, :locale => I18n.locale.to_s)
+        
+      end      
     
     end    
     

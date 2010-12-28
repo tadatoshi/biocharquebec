@@ -32,7 +32,7 @@ class SearchContent
         SearchContent.new(overview, :method_name_conversion => { :content => :description })
       end
       
-      results += BlogPost.search(keyword).map do |blog_post|
+      results += (BlogPost.search(keyword) + BlogPost.search_embedded(keyword)).uniq.map do |blog_post|
         SearchContent.new(blog_post)
       end
       

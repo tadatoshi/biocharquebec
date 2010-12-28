@@ -3,7 +3,9 @@ class Blogs::CommentsController < ApplicationController
   before_filter :get_blog_post
 
   def index
-    @comments = @blog_post.comments.in_current_locale.ordered
+    # In view, @comments.each itself throws "ArgumentError Exception: comparison of Array with Array failed" 
+    # so get documents from Mongoid Criteria
+    @comments = @blog_post.comments.in_current_locale.ordered.documents
     @comment = @blog_post.comments.build
   end
 

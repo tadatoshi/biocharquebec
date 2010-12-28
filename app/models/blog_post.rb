@@ -37,6 +37,10 @@ class BlogPost
     def search(keyword)
       in_current_locale.where("this.title.match(/#{keyword}/i) || this.content.match(/#{keyword}/i)")
     end
+    
+    def search_embedded(keyword)
+      in_current_locale.where("comments.content" => Regexp.new(keyword))
+    end    
   
   end
 
