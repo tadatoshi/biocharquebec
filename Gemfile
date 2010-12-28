@@ -37,6 +37,7 @@ group :test do
   gem "rspec"
   gem "rspec-rails"
   gem "mongoid-rspec"
+  gem "rspec_extensions_collection"
 end
 group :cucumber do
   gem "cucumber"

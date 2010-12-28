@@ -50,5 +50,7 @@ RSpec.configure do |config|
   config.include Devise::TestHelpers, :type => :controller  
   
   # Added by tadatoshi. For Mongoid:
-  config.include MongoidModelHelpers
+  # config.include MongoidModelHelpers
+  config.include RSpecExtensionsCollection::Matchers::MongoidModelHelpers
+  config.include RSpecExtensionsCollection::Matchers
 end

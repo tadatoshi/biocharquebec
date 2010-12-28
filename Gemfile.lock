@@ -155,6 +155,8 @@ GEM
       activesupport (~> 3.0)
       railties (~> 3.0)
       rspec (~> 2.3.0)
+    rspec_extensions_collection (0.0.1)
+      rspec
     ruby-debug-base19 (0.11.24)
       columnize (>= 0.3.1)
       linecache19 (>= 0.5.11)
@@ -211,6 +213,7 @@ DEPENDENCIES
   rails (= 3.0.3)
   rspec
   rspec-rails
+  rspec_extensions_collection
   ruby-debug-base19 (= 0.11.24)
   ruby-debug19 (= 0.11.6)
   selenium-client
