@@ -21,7 +21,13 @@ class Event
     def search(keyword)
       in_current_locale.where("this.title.match(/#{keyword}/i) || this.description.match(/#{keyword}/i)")
     end
-  
+    
+    def search_embedded(keyword)
+      in_current_locale.where("sessions.title" => Regexp.new(keyword))
+      # Following doesn't work:
+      # in_current_locale.where("this.sessions.title.match(/#{keyword}/i) || this.sessions.presenter.match(/#{keyword}/i) || this.sessions.affiliation.match(/#{keyword}/i)")
+    end
+
   end  
 
   private

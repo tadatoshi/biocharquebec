@@ -85,6 +85,14 @@ describe Event do
         
       end
       
+      it "should find blog_post with a keyword contained in specified embedded document" do
+        
+        Event.should search_embedded_by(:sessions, :title)
+        pending "Search should be made with multiple fields in embedded document"
+        Event.should search_embedded_by(:sessions, :title, :presenter, :affiliation)
+
+      end      
+      
     end  
     
   end
