@@ -36,10 +36,10 @@ class SearchContent
         SearchContent.new(blog_post)
       end
       
-      results += Event.search(keyword).map do |event|
+      results += (Event.search(keyword) + Event.search_embedded(keyword)).uniq.map do |event|
         SearchContent.new(event, :method_name_conversion => { :content => :description })
       end
-      
+
       results += ReferenceFile.search(keyword).map do |reference_file|
         SearchContent.new(reference_file)
       end
