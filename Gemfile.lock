@@ -81,6 +81,10 @@ GEM
     erubis (2.6.6)
       abstract (>= 1.0.0)
     eventmachine (0.12.10)
+    factory_girl (2.0.0.beta1)
+    factory_girl_rails (1.1.beta1)
+      factory_girl (~> 2.0.0.beta)
+      rails (>= 3.0.0)
     ffi (0.6.3)
       rake (>= 0.8.7)
     gherkin (2.3.3)
@@ -154,7 +158,7 @@ GEM
       activesupport (~> 3.0)
       railties (~> 3.0)
       rspec (~> 2.3.0)
-    rspec_extensions_collection (0.0.3)
+    rspec_extensions_collection (0.0.4)
       rspec
     ruby-debug-base19 (0.11.24)
       columnize (>= 0.3.1)
@@ -204,6 +208,7 @@ DEPENDENCIES
   database_cleaner
   devise (~> 1.1.2)
   devise_invitable!
+  factory_girl_rails (>= 1.1.beta1)
   launchy
   mini_magick
   mongoid (>= 2.0.0.beta.17)

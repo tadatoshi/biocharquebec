@@ -38,6 +38,7 @@ group :test do
   gem "rspec-rails"
   gem "mongoid-rspec"
   gem "rspec_extensions_collection"
+  gem "factory_girl_rails", ">=1.1.beta1"
 end
 group :cucumber do
   gem "cucumber"
