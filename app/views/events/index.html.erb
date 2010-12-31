@@ -9,7 +9,7 @@
   <% @events.each do |event| %>
   <div>
     <h3><%= link_to event.title, "#", :class => "content-title", "data-content-id" => event.id %></h3>
-    <h4><%=l event.date %></h4>
+    <h4><%= event.date ? l(event.date) : "" %></h4>
     <div class="content-detail" data-content-id=<%= event.id %>>
       <h4><%= event.location %></h4>
       <p><%= event.description %></p>

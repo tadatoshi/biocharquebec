@@ -49,8 +49,7 @@ RSpec.configure do |config|
   # Added by tadatoshi. For Devise:
   config.include Devise::TestHelpers, :type => :controller  
   
-  # Added by tadatoshi. For Mongoid:
-  # config.include MongoidModelHelpers
+  # Added by tadatoshi:
   config.include RSpecExtensionsCollection::Matchers::MongoidModelHelpers
   config.include RSpecExtensionsCollection::Matchers
 end
