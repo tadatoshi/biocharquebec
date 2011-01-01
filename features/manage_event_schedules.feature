@@ -3,22 +3,6 @@ Feature: Manage event_schedules
   Administrator
   wants add an event
 
-  Before do
-    Admin.delete_all
-    Event.delete_all
-    Video.delete_all
-    ReferenceFile.delete_all
-    DatabaseCleaner.start
-  end
-
-  After do
-    DatabaseCleaner.clean
-    Admin.delete_all
-    Event.delete_all
-    Video.delete_all
-    ReferenceFile.delete_all
-  end
-
   Scenario: Register new event
     Given I am an administrator logged in as "admin@biocharquebec.org" with user name "my user name" and password "secret"
     And I am on the new event page

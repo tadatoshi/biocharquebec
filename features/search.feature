@@ -3,22 +3,6 @@ Feature: Search
   User
   wants to search
 
-  Before do
-    BlogPost.delete_all
-    Event.delete_all
-    Video.delete_all
-    ReferenceFile.delete_all
-    DatabaseCleaner.start
-  end
-
-  After do
-    DatabaseCleaner.clean
-    BlogPost.delete_all
-    Event.delete_all
-    Video.delete_all
-    ReferenceFile.delete_all
-  end
-
   Background:
     Given the following overview records
       | title         | description                                           | locale |
