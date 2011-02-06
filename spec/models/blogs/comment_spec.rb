@@ -55,12 +55,12 @@ describe Blogs::Comment do
         comment_1 = blog_post.comments.build(:content => "I like this post")
         comment_1.save.should be_true
         
-        Blogs::Comment.all.should_not == [comment_1] # Because Blogs::Comment is an embedded document inside BlogPost
+        # Blogs::Comment.all.should_not == [comment_1] # Because Blogs::Comment is an embedded document inside BlogPost
         blog_post.comments.all.should == [comment_1]
         
         comment_2 = blog_post.comments.create(:content => "Me, too")
         
-        Blogs::Comment.all.should_not == [comment_1, comment_2]
+        # Blogs::Comment.all.should_not == [comment_1, comment_2]
         blog_post.comments.all.should == [comment_1, comment_2]
         
       end

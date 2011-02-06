@@ -16,7 +16,7 @@ gem "sqlite3-ruby", :require => "sqlite3"
 # gem "hpricot", "0.6"
 # gem "sqlite3-ruby", :require => "sqlite3"
 # gem "aws-s3", :require => "aws/s3"
-gem "mongoid", ">=2.0.0.beta.17"
+gem "mongoid", ">=2.0.0.rc.7"
 gem "bson_ext" # For mongoid
 gem "devise", "~> 1.1.2"
 gem "devise_invitable", :git => "git://github.com/rymai/devise_invitable.git"
@@ -36,7 +36,7 @@ end
 group :test do
   gem "rspec"
   gem "rspec-rails"
-  gem "mongoid-rspec"
+  # gem "mongoid-rspec"
   gem "rspec_extensions_collection"
   gem "factory_girl_rails", ">=1.1.beta1"
 end
