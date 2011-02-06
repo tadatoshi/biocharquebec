@@ -52,7 +52,7 @@ end
 # group :test do
 #   gem "webrat"
 # end
-group :production do
+group :staging, :production do
   gem "mysql2"
-  gem "thin"
+  gem "passenger"
 end

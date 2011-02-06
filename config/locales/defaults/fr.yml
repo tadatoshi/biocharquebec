@@ -170,7 +170,7 @@ fr:
     title_message: "Biochar-Québec est un groupe de personnes intéressées à l’étude du biochar."
     
   footer:
-    copyright_info: "%{copyright} © 2010 %{biochar_quebec}, %{all_rights_reserved}."
+    copyright_info: "%{copyright} © 2010-2011 %{biochar_quebec}, %{all_rights_reserved}."
     copyright: "Copyright"
     all_rights_reserved: "tous droits réservés" 
     terms_of_service: "Termes de Service"
