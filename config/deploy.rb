@@ -10,7 +10,7 @@ task :production do
   set :rails_env, "production"
   set :location, "biocharquebec.org"
   set_role
-  set :ruby_directory, "ruby-1.9.2-p0"
+  set :ruby_directory, "ruby-1.9.2-p136"
   set_default_environment
 end
 
