@@ -1,0 +1,13 @@
+--- 
+pid: tmp/pids/thin.pid
+log: log/thin.log
+timeout: 30
+port: 5100
+max_conns: 1024
+max_persistent_conns: 512
+# environment: "#{Rails.env}" # Note: Since this doesn't work, environment is specified with -e flag in Capistrano deploy.rb.
+daemonize: true
+address: 0.0.0.0
+require: []
+
+servers: 2
