@@ -4,6 +4,7 @@ task :staging do
   set_role
   set :ruby_directory, "ruby-1.9.2-p0"
   set_default_environment
+  set :application, "biocharquebec"
 end
 
 task :production do
@@ -12,6 +13,7 @@ task :production do
   set_role
   set :ruby_directory, "ruby-1.9.2-p136"
   set_default_environment
+  set :application, "biocharquebec_production"
 end
 
 task :set_default_environment do
@@ -23,7 +25,6 @@ task :set_default_environment do
   }
 end
 
-set :application, "biocharquebec"
 set :repository,  "git@github.com:tadatoshi/biocharquebec.git"
 
 set :scm, :git
