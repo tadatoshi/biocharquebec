@@ -2,7 +2,7 @@
 source 'http://gemcutter.org'
 
 
-gem "rails", "3.0.3"
+gem "rails", "3.0.4"
 
 ## Bundle edge rails:
 # gem "rails", :git => "git://github.com/rails/rails.git"
@@ -17,7 +17,7 @@ gem "sqlite3-ruby", :require => "sqlite3"
 # gem "sqlite3-ruby", :require => "sqlite3"
 # gem "aws-s3", :require => "aws/s3"
 gem "mongoid", ">=2.0.0.rc.7"
-gem "bson_ext" # For mongoid
+gem "bson_ext", ">=1.2.0" # For mongoid
 gem "devise", "~> 1.1.2"
 gem "devise_invitable", :git => "git://github.com/rymai/devise_invitable.git"
 gem "capistrano"
@@ -56,3 +56,5 @@ group :staging, :production do
   gem "mysql2"
   gem "passenger"
 end
+
+gem "simplecov", :require => false, :group => :test 

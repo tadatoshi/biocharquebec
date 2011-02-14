@@ -7,3 +7,5 @@ rerun.txt
 capybara*.html
 .idea
 public/uploads/**/*
+coverage/**/*
+rails_best_practices_output.html
