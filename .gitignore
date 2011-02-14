@@ -2,10 +2,12 @@
 db/*.sqlite3
 log/*.log
 tmp/**/*
+tmp/*.*
 .DS_Store
 rerun.txt
 capybara*.html
 .idea
 public/uploads/**/*
+coverage
 coverage/**/*
 rails_best_practices_output.html
