@@ -23,20 +23,16 @@ RSpec.configure do |config|
   config.mock_with :rspec
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
-  # Commented out by tadatoshi because running spec caused an error "undefined method `fixture_path='" 
-  # and because fixtures are not used:
-  # config.fixture_path = "#{::Rails.root}/spec/fixtures"
+  config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
-  # Commented out by tadatoshi because running spec caused an error "undefined method `use_transactional_fixtures='":
-  # config.use_transactional_fixtures = true
+  config.use_transactional_fixtures = true
   
   # Added by tadatoshi:
   config.before(:suite) do
-    DatabaseCleaner.strategy = :transaction
-    DatabaseCleaner.clean_with(:truncation)
+    DatabaseCleaner.strategy = :truncation
   end
 
   # Added by tadatoshi:
@@ -54,5 +50,5 @@ RSpec.configure do |config|
   
   # Added by tadatoshi:
   config.include RSpecExtensionsCollection::Matchers::MongoidModelHelpers
-  config.include RSpecExtensionsCollection::Matchers
+  config.include RSpecExtensionsCollection::Matchers  
 end

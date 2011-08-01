@@ -1,0 +1,8 @@
+/*
+ * FIXME: Introduce SCSS & Sprockets
+ * Added by tadatoshi in place of application.css in the case of media type print
+ *= require_self
+ *= require 'print'
+ *= require 'list-layout'
+ *= require 'list-style'
+*/
